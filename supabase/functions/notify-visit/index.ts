@@ -1,4 +1,7 @@
 import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.95.0";
+
+
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
 const TO_EMAIL = "abiodunadedamola94@gmail.com";
@@ -92,6 +95,37 @@ Deno.serve(async (req) => {
       screenSize: clip(raw.screenSize, 20),
       sessionId: clip(raw.sessionId, 64) ?? undefined,
     };
+
+    // Anti-abuse: require a sessionId AND verify it was actually inserted
+    // into the visits table within the last 5 minutes. This prevents the
+    // function from being called directly to flood the inbox.
+    if (!p.sessionId || !p.path) {
+      return genericError(400, "Invalid request");
+    }
+    const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+    const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    if (!SUPABASE_URL || !SERVICE_ROLE) {
+      console.error("[notify-visit] missing supabase env");
+      return genericError(500);
+    }
+    const admin = createClient(SUPABASE_URL, SERVICE_ROLE, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const fiveMinAgo = new Date(Date.now() - 5 * 60_000).toISOString();
+    const { data: rows, error: lookupErr } = await admin
+      .from("visits")
+      .select("id")
+      .eq("session_id", p.sessionId)
+      .gte("created_at", fiveMinAgo)
+      .limit(1);
+    if (lookupErr) {
+      console.error("[notify-visit] lookup failed", lookupErr.message);
+      return genericError(500);
+    }
+    if (!rows || rows.length === 0) {
+      return genericError(403, "Forbidden");
+    }
+
 
     const html = `
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;padding:20px;color:#111">
