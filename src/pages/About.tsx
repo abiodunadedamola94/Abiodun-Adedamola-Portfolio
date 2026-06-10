@@ -191,8 +191,15 @@ export default function About() {
                 {item.images.length > 0 && (
                   <div className="grid grid-cols-2 gap-3 mt-3 mb-3">
                     {item.images.map((img, i) => (
-                      <div key={i} className="rounded-xl overflow-hidden border border-border bg-card aspect-[4/3]">
-                        <img src={img} alt={`${item.title} ${i + 1}`} className="w-full h-full object-cover" loading="lazy" width={768} height={576} />
+                      <div key={i} className="group rounded-xl overflow-hidden border border-border bg-card aspect-[4/3]">
+                        <img
+                          src={img}
+                          alt={`${item.title} ${i + 1}`}
+                          className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03]"
+                          loading="lazy"
+                          width={768}
+                          height={576}
+                        />
                       </div>
                     ))}
                   </div>
