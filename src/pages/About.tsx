@@ -68,8 +68,14 @@ export default function About() {
 
         {/* Photo Grid */}
         <section className="reveal">
-          <div className="rounded-2xl overflow-hidden border border-border bg-card aspect-[16/9]">
-            <img src={aboutHero} alt="Adedamola speaking at a tech conference" className="w-full h-full object-cover" width={960} height={540} />
+          <div className="group rounded-2xl overflow-hidden border border-border bg-card aspect-[16/9]">
+            <img
+              src={aboutHero}
+              alt="Adedamola speaking at a tech conference"
+              className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+              width={960}
+              height={540}
+            />
           </div>
           <div className="grid grid-cols-3 gap-3 mt-3">
             <div className="group rounded-xl overflow-hidden border border-border bg-card aspect-square">
@@ -82,11 +88,25 @@ export default function About() {
                 height={512}
               />
             </div>
-            <div className="rounded-xl overflow-hidden border border-border bg-card aspect-square">
-              <img src={aboutGrid1} alt="ADE branded portrait" className="w-full h-full object-cover" loading="lazy" width={512} height={512} />
+            <div className="group rounded-xl overflow-hidden border border-border bg-card aspect-square">
+              <img
+                src={aboutGrid1}
+                alt="ADE branded portrait"
+                className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+                loading="lazy"
+                width={512}
+                height={512}
+              />
             </div>
-            <div className="rounded-xl overflow-hidden border border-border bg-card aspect-square">
-              <img src={aboutGrid3} alt="Casual street style" className="w-full h-full object-cover object-top" loading="lazy" width={512} height={512} />
+            <div className="group rounded-xl overflow-hidden border border-border bg-card aspect-square">
+              <img
+                src={aboutGrid3}
+                alt="Casual street style"
+                className="w-full h-full object-cover object-top grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+                loading="lazy"
+                width={512}
+                height={512}
+              />
             </div>
           </div>
         </section>
