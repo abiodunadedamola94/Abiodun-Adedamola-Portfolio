@@ -1,5 +1,5 @@
 import aboutHero from "@/assets/about-hero.webp";
-import aboutGrid1 from "@/assets/about-grid-1.jpg";
+import aboutGrid1 from "@/assets/adedamola-portrait.jpg.asset.json";
 import aboutGrid3 from "@/assets/about-grid-3.jpg";
 import portrait from "@/assets/profile-avatar.jpg";
 import journeyOps1 from "@/assets/journey-ops-1.jpg";
