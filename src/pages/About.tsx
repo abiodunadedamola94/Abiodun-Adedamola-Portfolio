@@ -1,5 +1,5 @@
 import aboutHero from "@/assets/about-hero.webp";
-import aboutGrid1Asset from "@/assets/adedamola-portrait.jpg.asset.json";
+import aboutGrid1Json from "@/assets/adedamola-portrait.jpg.asset.json";
 import aboutGrid3 from "@/assets/about-grid-3.jpg";
 import portrait from "@/assets/profile-avatar.jpg";
 import journeyOps1 from "@/assets/journey-ops-1.jpg";
@@ -8,7 +8,11 @@ import journeyDesign1 from "@/assets/journey-design-1.jpg";
 import journeyDesign2 from "@/assets/journey-design-2.jpg";
 import journeyProducts1 from "@/assets/journey-products-1.jpg";
 import journeyProducts2 from "@/assets/journey-products-2.jpg";
-import journeyLead1Asset from "@/assets/fanta-design.png.asset.json";
+import journeyLead1Json from "@/assets/fanta-design.png.asset.json";
+import journeyLead2 from "@/assets/journey-lead-2.jpg";
+
+const aboutGrid1 = aboutGrid1Json.url;
+const journeyLead1 = journeyLead1Json.url;
 import journeyLead2 from "@/assets/journey-lead-2.jpg";
 
 export default function About() {
