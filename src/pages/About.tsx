@@ -72,7 +72,7 @@ export default function About() {
             <img
               src={aboutHero}
               alt="Adedamola speaking at a tech conference"
-              className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+              className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:grayscale group-hover:scale-[1.02]"
               width={960}
               height={540}
             />
@@ -82,7 +82,7 @@ export default function About() {
               <img
                 src={portrait}
                 alt="Adedamola portrait"
-                className="w-full h-full object-cover transition-all duration-500 group-hover:grayscale"
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:grayscale group-hover:scale-[1.02]"
                 loading="lazy"
                 width={512}
                 height={512}
@@ -92,7 +92,7 @@ export default function About() {
               <img
                 src={aboutGrid1}
                 alt="ADE branded portrait"
-                className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:grayscale group-hover:scale-[1.02]"
                 loading="lazy"
                 width={512}
                 height={512}
@@ -102,7 +102,7 @@ export default function About() {
               <img
                 src={aboutGrid3}
                 alt="Casual street style"
-                className="w-full h-full object-cover object-top grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover object-top transition-all duration-700 ease-out group-hover:grayscale group-hover:scale-[1.02]"
                 loading="lazy"
                 width={512}
                 height={512}
@@ -195,7 +195,7 @@ export default function About() {
                         <img
                           src={img}
                           alt={`${item.title} ${i + 1}`}
-                          className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03]"
+                          className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:grayscale group-hover:scale-[1.03]"
                           loading="lazy"
                           width={768}
                           height={576}
