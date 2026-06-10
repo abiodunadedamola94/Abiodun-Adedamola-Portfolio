@@ -1,4 +1,7 @@
 import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.95.0";
+
+
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
 const TO_EMAIL = "abiodunadedamola94@gmail.com";
