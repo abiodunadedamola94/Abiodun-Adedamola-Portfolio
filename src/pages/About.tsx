@@ -13,7 +13,6 @@ import journeyLead2 from "@/assets/journey-lead-2.jpg";
 
 const aboutGrid1 = aboutGrid1Json.url;
 const journeyLead1 = journeyLead1Json.url;
-import journeyLead2 from "@/assets/journey-lead-2.jpg";
 
 export default function About() {
   const journey = [
