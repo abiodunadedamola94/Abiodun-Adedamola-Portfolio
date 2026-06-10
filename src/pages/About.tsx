@@ -42,7 +42,7 @@ export default function About() {
       period: "2024 - 2025",
       description:
         "I now collaborate with multidisciplinary teams to design AI-powered products and ship full web experiences using vibe-coding tools — Lovable, Claude, Antigravity, Google Stitch, Trae AI, and VS Code. From LeapTra AI to learning platforms and a vehicle car-tech product, I bridge design and code so ideas reach users faster.",
-      images: [{ src: journeyLead1Asset.url }, { src: journeyLead2 }] as any,
+      images: [journeyLead1, journeyLead2],
     },
     {
       title: "Designer, Strategist, Future School Owner",
