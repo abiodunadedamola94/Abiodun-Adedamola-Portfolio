@@ -36,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/songs" element={<Songs />} />
         <Route path="/playground" element={<Playground />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/_admin/invoice-x9k2p7" element={<InvoiceAdmin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
