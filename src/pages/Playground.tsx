@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import InvoiceBuilder from "@/components/invoice/InvoiceBuilder";
 
 const experiments = [
   {
