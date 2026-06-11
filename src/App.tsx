@@ -16,6 +16,7 @@ import Shop from "./pages/Shop";
 import Songs from "./pages/Songs";
 import Playground from "./pages/Playground";
 import Contact from "./pages/Contact";
+import InvoiceAdmin from "./pages/InvoiceAdmin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
