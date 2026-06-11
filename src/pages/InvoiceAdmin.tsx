@@ -1,19 +1,32 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import InvoiceBuilder from "@/components/invoice/InvoiceBuilder";
 
 export default function InvoiceAdmin() {
+  const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
+
+  const handleOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next) navigate("/");
+  };
+
   return (
-    <div className="min-h-screen px-5 py-10 sm:px-6 sm:py-12">
-      <div className="max-w-[1100px] mx-auto">
-        <section>
-          <h2 className="mb-1 text-[15px] font-semibold tracking-tight text-foreground">
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogContent className="max-w-[1100px] w-[95vw] max-h-[92vh] overflow-y-auto p-5 sm:p-6">
+        <DialogHeader>
+          <DialogTitle className="text-[15px] font-semibold tracking-tight">
             Invoice Builder
-          </h2>
-          <p className="mb-6 text-xs leading-5 text-muted-foreground">
+          </DialogTitle>
+          <DialogDescription className="text-xs leading-5">
             Draft a professional invoice, preview it live, then download or share with your client.
-          </p>
+          </DialogDescription>
+        </DialogHeader>
+        <div className="mt-4">
           <InvoiceBuilder />
-        </section>
-      </div>
-    </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
