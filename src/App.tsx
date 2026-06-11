@@ -15,6 +15,7 @@ import Blogs from "./pages/Blogs";
 import Shop from "./pages/Shop";
 import Songs from "./pages/Songs";
 import Playground from "./pages/Playground";
+import PlaygroundDetail from "./pages/PlaygroundDetail";
 import Contact from "./pages/Contact";
 import InvoiceAdmin from "./pages/InvoiceAdmin";
 import NotFound from "./pages/NotFound";
@@ -35,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/songs" element={<Songs />} />
         <Route path="/playground" element={<Playground />} />
+        <Route path="/playground/:slug" element={<PlaygroundDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/_admin/invoice-x9k2p7" element={<InvoiceAdmin />} />
         <Route path="*" element={<NotFound />} />

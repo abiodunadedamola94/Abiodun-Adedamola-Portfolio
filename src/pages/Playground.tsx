@@ -1,42 +1,6 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-
-const experiments = [
-  {
-    title: "Interactive Particles",
-    description: "Canvas-based particle system that responds to mouse movement and touch gestures.",
-    tag: "CANVAS",
-    status: "Live",
-    tagClass: "border-blue-500/20 bg-blue-500/10 text-blue-300",
-  },
-  {
-    title: "3D Card Hover",
-    description: "CSS 3D transforms for immersive card interactions with perspective depth.",
-    tag: "CSS",
-    status: "Live",
-    tagClass: "border-violet-500/20 bg-violet-500/10 text-violet-300",
-  },
-  {
-    title: "Color Generator",
-    description: "AI-powered color palette generator for designers and developers.",
-    tag: "AI",
-    status: "WIP",
-    tagClass: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
-  },
-  {
-    title: "Micro Animations",
-    description: "Collection of reusable micro-interaction animations for web interfaces.",
-    tag: "MOTION",
-    status: "Live",
-    tagClass: "border-amber-500/20 bg-amber-500/10 text-amber-300",
-  },
-  {
-    title: "Gradient Mesh",
-    description: "Dynamic gradient mesh backgrounds generator with export options.",
-    tag: "GENERATIVE",
-    status: "Live",
-    tagClass: "border-rose-500/20 bg-rose-500/10 text-rose-300",
-  },
-];
+import { experiments } from "@/data/experiments";
 
 export default function Playground() {
   return (
@@ -52,9 +16,10 @@ export default function Playground() {
 
           <div className="space-y-3">
             {experiments.map((exp) => (
-              <article
-                key={exp.title}
-                className="group rounded-[22px] border border-border bg-card px-4 py-4 shadow-[0_1px_0_rgba(255,255,255,0.02)_inset] transition-colors hover:border-muted-foreground/15 hover:bg-secondary cursor-pointer"
+              <Link
+                key={exp.slug}
+                to={`/playground/${exp.slug}`}
+                className="group block rounded-[22px] border border-border bg-card px-4 py-4 shadow-[0_1px_0_rgba(255,255,255,0.02)_inset] transition-colors hover:border-muted-foreground/15 hover:bg-secondary"
               >
                 <div className="mb-2 flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2.5">
@@ -79,7 +44,7 @@ export default function Playground() {
                     {exp.tag}
                   </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
