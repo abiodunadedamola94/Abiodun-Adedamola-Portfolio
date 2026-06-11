@@ -16,6 +16,7 @@ import Shop from "./pages/Shop";
 import Songs from "./pages/Songs";
 import Playground from "./pages/Playground";
 import Contact from "./pages/Contact";
+import InvoiceAdmin from "./pages/InvoiceAdmin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/songs" element={<Songs />} />
         <Route path="/playground" element={<Playground />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/_admin/invoice-x9k2p7" element={<InvoiceAdmin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
