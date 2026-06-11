@@ -9,7 +9,7 @@ export default function InvoiceAdmin() {
 
   const handleOpenChange = (next: boolean) => {
     setOpen(next);
-    if (!next) navigate("/");
+    if (!next) navigate("/playground");
   };
 
   return (
