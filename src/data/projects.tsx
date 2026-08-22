@@ -73,13 +73,13 @@ const Icon = ({ children, className }: { children: ReactNode; className: string 
 export const projects: ProjectCaseStudy[] = [
   {
     id: "leaptra",
-    name: "LeapTra AI",
-    tagline: "Product & Website Experience for an AI Automation Brand",
+    name: "LeapTra",
+    tagline: "Growth infrastructure for businesses that have outgrown freelancers and generalist agencies",
     role: "Product Designer",
     year: "2025",
     client: "LeapTra",
-    industry: "AI & Automation",
-    duration: "10 weeks",
+    industry: "SaaS / Growth Infrastructure",
+    duration: "Ongoing",
     platform: "Web App + Marketing Site",
     heroImage: leaptraWork,
     heroImageSources: { 480: leaptraWork480, 960: leaptraWork960, 1440: leaptraWork1440 },
@@ -90,7 +90,9 @@ export const projects: ProjectCaseStudy[] = [
     secondaryUrl: "https://leaptra.ai",
     secondaryLabel: "leaptra.ai (AI Studio)",
     description:
-      "A full AI automation platform with a clean, high-clarity website and product interface designed to educate, build trust, and drive conversion with smooth UX and sharp visual hierarchy.",
+      "LeapTra builds and operates the growth layer for scaling businesses — product, distribution, brand, and embedded talent — run as one coordinated system against one set of numbers. It's not an agency. It's not a freelance platform. It's a growth infrastructure partner for businesses that have hit the ceiling of what a generalist setup can deliver.",
+    tags: ["SaaS", "AI Agents", "Growth Infrastructure", "Brand", "Product", "Embedded Talent"],
+    status: "Active",
     icon: (
       <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-md bg-black">
         <img src={leaptraLogo} alt="LeapTra logo" className="h-full w-full object-contain p-0.5" />
@@ -98,11 +100,11 @@ export const projects: ProjectCaseStudy[] = [
     ),
     accentClass: "from-[#7b5cff] to-[#4617a9]",
     overview:
-      "LeapTra needed a unified product + marketing experience that could explain complex AI automation in a way that felt approachable and trustworthy. The goal: turn curiosity into activated users across both the marketing site (leaptra.com) and the AI Studio product (leaptra.ai).",
+      "LeapTra is a growth infrastructure company that embeds directly into scaling businesses to build and operate their product, distribution, brand, and talent functions as one coordinated system. I joined as Product Designer, working across AI agent design, SaaS interface design, and internal tool development.",
     problem:
-      "Prospective users couldn't quickly grasp what LeapTra's agents actually did, and the product UI felt heavy for first-time users exploring agent bundles and pricing.",
+      "Scaling businesses consistently hit the same wall: they've outgrown freelancers, but agencies give them fragmented output with no accountability to outcomes. LeapTra exists to fill that gap — operating as an embedded growth layer that owns results, not just deliverables. My design work had to reflect that positioning: every product I touched needed to work, not just look good.",
     solution:
-      "Designed a modular agent library with clear pricing toggles, bundle savings, and demo previews. The marketing site mirrors product clarity—every section answers a buyer question before it's asked.",
+      "Product Designer — responsible for AI agent UX design, admin dashboard design, and client-facing product interfaces across LeapTra's suite of services. I designed AI agents for sales, marketing, onboarding, operations, and customer support automation; an email organiser and lead qualifier agent that screens, scores, and routes prospects directly into CRM pipelines; AI-powered chatbot support systems for client onboarding guidance; and admin dashboards for internal reporting and monitoring.",
     designThinking:
       "I treated LeapTra's homepage as a sales conversation. Instead of leading with abstract AI claims, I structured the site around the buyer's actual decision path: What is it? → Who is it for? → How does it work? → What does it cost? → Can I trust it? Each section became a literal answer. For the AI Studio, I leaned into a dense, dark, IDE-like interface that signals power to technical users while keeping the agent library scannable for non-technical buyers. Gradient violets reinforce the 'intelligent system' feel without veering into cliché AI visuals.",
     typography: [
@@ -129,29 +131,39 @@ export const projects: ProjectCaseStudy[] = [
       { title: "UI System", detail: "Built a token-based dark UI with gradient accents, reusable card patterns, and a billing toggle." },
       { title: "Validation", detail: "Tested with 6 SMB owners; iterated copy and pricing display based on confusion points." },
     ],
-    outcomes: [
-      "+38% increase in agent activation rate",
-      "Reduced time-to-first-deployment by 4 minutes",
-      "Bundle conversion grew 2.1× post-launch",
+    keyDecisions: [
+      { title: "Workflow-first agents", detail: "Designed each AI agent around the specific workflow it was replacing — not as a generic chat interface, but as a purpose-built tool that fits how the team already operates." },
+      { title: "Dense, action-able dashboards", detail: "Dashboard design prioritised information density and action-ability — built for operators who need to make decisions quickly, not for passive monitoring." },
+      { title: "Buildable by default", detail: "Cross-functional collaboration with engineers and consultants to ensure every design was actually buildable and shippable on schedule." },
     ],
+    outcomes: [
+      "40% improvement in overall business efficiency across designed workflows",
+      "52% reduction in response time from the email organiser and lead qualifier agent",
+      "28% increase in lead conversion from the CRM routing system",
+      "35% improvement in internal reporting and monitoring efficiency",
+    ],
+    reflection:
+      "LeapTra pushed me to design for outcomes, not outputs. When the company you're designing for measures success in revenue and efficiency numbers — not in design approval — it sharpens how you think about every decision. I stopped asking \"does this look right?\" and started asking \"does this actually work?\" That shift is permanent.",
     tools: ["Figma", "Framer", "Notion", "Loom"],
   },
   {
     id: "jompal",
-    name: "Jomppa Handyman Services",
-    tagline: "On-demand handyman booking, redesigned",
-    role: "UX Designer",
+    name: "Jomppa",
+    tagline: "Errand service platform for Nigerians and the Nigerian diaspora",
+    role: "Product Designer (End-to-End)",
     year: "2024",
     client: "Jomppa",
-    industry: "Marketplace / Services",
-    duration: "8 weeks",
-    platform: "Mobile + Web",
+    industry: "Errand Services / Diaspora",
+    duration: "End-to-end",
+    platform: "PWA (Mobile-first)",
     heroImage: jomppaBanner,
     heroImageSources: { 480: jomppaBanner480, 960: jomppaBanner960, 1440: jomppaBanner1440 },
     liveUrl: "https://jomppa.com",
     liveLabel: "jomppa.com",
     description:
-      "A seamless on-demand handyman platform connecting homeowners with trusted local service providers through an intuitive and frictionless booking experience.",
+      "An errand service platform built for Nigerians and the Nigerian diaspora — send gifts, deliver corporate documents, run grocery errands, and handle day-to-day tasks within Nigeria and across borders.",
+    tags: ["PWA", "Errand Services", "Diaspora", "Design Systems", "Mobile"],
+    status: "Active",
     icon: (
       <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-md border border-border bg-card">
         <img src={jomppaLogo} alt="Jomppa logo" className="h-full w-full object-contain" />
@@ -159,13 +171,24 @@ export const projects: ProjectCaseStudy[] = [
     ),
     accentClass: "from-blue-500 to-indigo-600",
     overview:
-      "Jomppa wanted a booking flow that felt as easy as ordering a ride—matched to a vetted local pro in under a minute. The redesign needed to inspire trust at first glance and remove every unnecessary tap from the booking journey.",
+      "Jomppa is an errand service platform built specifically for Nigerians and the Nigerian diaspora. It enables users to send gifts, deliver corporate documents, run grocery errands, and handle day-to-day tasks — both within Nigeria and across borders. The platform bridges the gap between Nigerians abroad who need things done at home and trusted, accountable runners who can execute those tasks reliably.",
     problem:
-      "The legacy flow had 9 screens to book a single service, and trust signals (reviews, verification) were buried below the fold.",
+      "There is a specific kind of frustration that Nigerians living abroad know well — the anxiety of needing something done back home with no reliable way to make it happen. Send a birthday gift to a parent in Lagos. Get a contract signed and delivered to a business partner in Abuja. Pick up groceries for a family member who can't leave the house. The informal alternatives — WhatsApp middlemen, asking favours from friends of friends — worked until they didn't. When they failed, there was no accountability, no recourse, and often no refund. For the diaspora especially, this carried extra emotional weight. Jomppa was built to close this gap.",
     solution:
-      "Collapsed booking into a 3-step flow with smart defaults, surfaced provider trust signals up front, and added a transparent price estimator before commitment.",
+      "Product Designer — end-to-end. Research, information architecture, service categorisation, wireframing, prototyping, design system, high-fidelity UI, and developer handoff through to launch.",
     designThinking:
-      "Booking a handyman is a high-anxiety decision—someone is coming into your home. So the entire visual language had to feel calm, professional, and human. I leaned into a friendly blue palette to communicate trust (the same psychology used in banking and healthcare) and paired it with rounded geometry and real provider photography. Every screen earns its place: if a step couldn't be defaulted or removed, it had to be justified. The result is a flow where the user feels in control without ever feeling lost.",
+      "Trust is the product, not the errand — users don't just want it done, they want to feel confident it will be done correctly, on time, without chasing. Different errands also carry different emotional weight: a corporate document has legal implications, a birthday gift carries sentiment, groceries have perishability concerns. Each needed its own UX treatment. And diaspora users onboard differently — often in a hurry, on a different device, across a time zone — so zero app store friction was non-negotiable.",
+    keyInsights: [
+      "Trust is the product, not the errand. Users don't just want it done — they want to feel confident it will be done correctly, on time, without chasing.",
+      "Different errands carry different emotional weight. A corporate document has legal implications. A birthday gift carries sentiment. Groceries have perishability concerns. Each needed its own UX treatment.",
+      "Diaspora users onboard differently. They're often in a hurry, on a different device, across a time zone. Zero app store friction was non-negotiable.",
+    ],
+    keyDecisions: [
+      { title: "PWA over native app", detail: "A link that works immediately, no download required — designed specifically for diaspora onboarding behaviour." },
+      { title: "Service-specific flows", detail: "Distinct request flows for gift sending, document delivery, and grocery runs, with tailored fields, confirmation language, and timeline expectations." },
+      { title: "Real-time status design", detail: "A persistent status layer (confirmed → runner assigned → en route → delivered) to reduce anxiety and eliminate the urge to contact support." },
+      { title: "Design system built to scale", detail: "A component library from day one, not as an afterthought." },
+    ],
     typography: [
       { family: "Satoshi", usage: "Headlines, hero, marketing", weights: "500, 700, 900" },
       { family: "Inter", usage: "Body, forms, UI", weights: "400, 500, 600" },
@@ -179,20 +202,25 @@ export const projects: ProjectCaseStudy[] = [
       { name: "Success", hex: "#10B981", usage: "Confirmation, ETA badges" },
     ],
     websiteOverview: [
-      "Marketing site (jomppa.com): Service categories grid, transparent pricing, 'How it works' in 3 steps, verified-pro testimonials, and a sticky booking CTA.",
-      "Booking flow: 3-step funnel — pick service → choose time → confirm address. Smart defaults pre-fill returning users.",
-      "Provider profile cards: verification badge, rating breakdown, response time, and price range surfaced above the fold.",
+      "Platform (jomppa.com): installable PWA with service categories for gifting, document delivery, groceries, and custom errands.",
+      "Cross-border request flow: diaspora users place an errand for a recipient in Nigeria, pay in their own currency, and track it live.",
+      "Real-time status layer: confirmed → runner assigned → en route → delivered, visible on every screen.",
+      "Design system: component library and tokens built from day one for fast, consistent developer handoff.",
     ],
     process: [
-      { title: "Field Research", detail: "Shadowed 4 handymen and interviewed 12 homeowners across 3 cities." },
-      { title: "Flow Design", detail: "Reduced 9 steps to 3 with progressive disclosure and saved-address logic." },
-      { title: "Trust Layer", detail: "Designed verification badges, rating breakdowns, and live ETA." },
+      { title: "Research", detail: "Interviewed diaspora users and Nigeria-based recipients to map errand types, failure modes, and trust breakdowns in informal alternatives." },
+      { title: "Service Categorisation", detail: "Defined the information architecture and grouped errands by emotional weight and operational requirements." },
+      { title: "Design System", detail: "Built the component library, tokens, and patterns before high-fidelity UI to keep the platform scalable." },
+      { title: "Handoff & Launch", detail: "Prototyped, documented, and handed off to engineering through to live launch." },
     ],
     outcomes: [
-      "Booking completion up 54%",
-      "Average time-to-book dropped from 4:20 to 1:35",
-      "Provider acceptance rate +22%",
+      "45% improvement in platform load time",
+      "25% reduction in user onboarding time",
+      "40% decrease in developer handoff time (reflecting design system quality)",
+      "40% increase in overall platform engagement",
     ],
+    reflection:
+      "Jomppa taught me that the most important UX problem is often not the one immediately visible. On the surface it's an errand app. Underneath, it's a trust platform for a community that has historically relied on informal systems with no accountability. Designing for the diaspora pushed me to think harder about context — the emotional distance of being abroad, the high stakes of getting something wrong for a loved one, the friction of onboarding under time pressure. Those constraints made the design better.",
     tools: ["Figma", "Maze", "Miro"],
   },
   {
