@@ -46,15 +46,21 @@ export type ProjectCaseStudy = {
   secondaryUrl?: string;
   secondaryLabel?: string;
   description: string;
+  tags?: string[];
+  status?: string;
+  keyInsights?: string[];
+  keyDecisions?: { title: string; detail: string }[];
+  reflection?: string;
+  whatsNext?: string;
   icon: ReactNode;
   accentClass: string;
   overview: string;
   problem: string;
   solution: string;
   designThinking: string;
-  typography: TypographyEntry[];
-  colorPalette: ColorSwatch[];
-  websiteOverview: string[];
+  typography?: TypographyEntry[];
+  colorPalette?: ColorSwatch[];
+  websiteOverview?: string[];
   process: { title: string; detail: string }[];
   outcomes: string[];
   tools: string[];
@@ -67,13 +73,13 @@ const Icon = ({ children, className }: { children: ReactNode; className: string 
 export const projects: ProjectCaseStudy[] = [
   {
     id: "leaptra",
-    name: "LeapTra AI",
-    tagline: "Product & Website Experience for an AI Automation Brand",
+    name: "LeapTra",
+    tagline: "Growth infrastructure for businesses that have outgrown freelancers and generalist agencies",
     role: "Product Designer",
     year: "2025",
     client: "LeapTra",
-    industry: "AI & Automation",
-    duration: "10 weeks",
+    industry: "SaaS / Growth Infrastructure",
+    duration: "Ongoing",
     platform: "Web App + Marketing Site",
     heroImage: leaptraWork,
     heroImageSources: { 480: leaptraWork480, 960: leaptraWork960, 1440: leaptraWork1440 },
@@ -84,7 +90,9 @@ export const projects: ProjectCaseStudy[] = [
     secondaryUrl: "https://leaptra.ai",
     secondaryLabel: "leaptra.ai (AI Studio)",
     description:
-      "A full AI automation platform with a clean, high-clarity website and product interface designed to educate, build trust, and drive conversion with smooth UX and sharp visual hierarchy.",
+      "LeapTra builds and operates the growth layer for scaling businesses — product, distribution, brand, and embedded talent — run as one coordinated system against one set of numbers. It's not an agency. It's not a freelance platform. It's a growth infrastructure partner for businesses that have hit the ceiling of what a generalist setup can deliver.",
+    tags: ["SaaS", "AI Agents", "Growth Infrastructure", "Brand", "Product", "Embedded Talent"],
+    status: "Active",
     icon: (
       <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-md bg-black">
         <img src={leaptraLogo} alt="LeapTra logo" className="h-full w-full object-contain p-0.5" />
@@ -92,11 +100,11 @@ export const projects: ProjectCaseStudy[] = [
     ),
     accentClass: "from-[#7b5cff] to-[#4617a9]",
     overview:
-      "LeapTra needed a unified product + marketing experience that could explain complex AI automation in a way that felt approachable and trustworthy. The goal: turn curiosity into activated users across both the marketing site (leaptra.com) and the AI Studio product (leaptra.ai).",
+      "LeapTra is a growth infrastructure company that embeds directly into scaling businesses to build and operate their product, distribution, brand, and talent functions as one coordinated system. I joined as Product Designer, working across AI agent design, SaaS interface design, and internal tool development.",
     problem:
-      "Prospective users couldn't quickly grasp what LeapTra's agents actually did, and the product UI felt heavy for first-time users exploring agent bundles and pricing.",
+      "Scaling businesses consistently hit the same wall: they've outgrown freelancers, but agencies give them fragmented output with no accountability to outcomes. LeapTra exists to fill that gap — operating as an embedded growth layer that owns results, not just deliverables. My design work had to reflect that positioning: every product I touched needed to work, not just look good.",
     solution:
-      "Designed a modular agent library with clear pricing toggles, bundle savings, and demo previews. The marketing site mirrors product clarity—every section answers a buyer question before it's asked.",
+      "Product Designer — responsible for AI agent UX design, admin dashboard design, and client-facing product interfaces across LeapTra's suite of services. I designed AI agents for sales, marketing, onboarding, operations, and customer support automation; an email organiser and lead qualifier agent that screens, scores, and routes prospects directly into CRM pipelines; AI-powered chatbot support systems for client onboarding guidance; and admin dashboards for internal reporting and monitoring.",
     designThinking:
       "I treated LeapTra's homepage as a sales conversation. Instead of leading with abstract AI claims, I structured the site around the buyer's actual decision path: What is it? → Who is it for? → How does it work? → What does it cost? → Can I trust it? Each section became a literal answer. For the AI Studio, I leaned into a dense, dark, IDE-like interface that signals power to technical users while keeping the agent library scannable for non-technical buyers. Gradient violets reinforce the 'intelligent system' feel without veering into cliché AI visuals.",
     typography: [
@@ -123,29 +131,39 @@ export const projects: ProjectCaseStudy[] = [
       { title: "UI System", detail: "Built a token-based dark UI with gradient accents, reusable card patterns, and a billing toggle." },
       { title: "Validation", detail: "Tested with 6 SMB owners; iterated copy and pricing display based on confusion points." },
     ],
-    outcomes: [
-      "+38% increase in agent activation rate",
-      "Reduced time-to-first-deployment by 4 minutes",
-      "Bundle conversion grew 2.1× post-launch",
+    keyDecisions: [
+      { title: "Workflow-first agents", detail: "Designed each AI agent around the specific workflow it was replacing — not as a generic chat interface, but as a purpose-built tool that fits how the team already operates." },
+      { title: "Dense, action-able dashboards", detail: "Dashboard design prioritised information density and action-ability — built for operators who need to make decisions quickly, not for passive monitoring." },
+      { title: "Buildable by default", detail: "Cross-functional collaboration with engineers and consultants to ensure every design was actually buildable and shippable on schedule." },
     ],
+    outcomes: [
+      "40% improvement in overall business efficiency across designed workflows",
+      "52% reduction in response time from the email organiser and lead qualifier agent",
+      "28% increase in lead conversion from the CRM routing system",
+      "35% improvement in internal reporting and monitoring efficiency",
+    ],
+    reflection:
+      "LeapTra pushed me to design for outcomes, not outputs. When the company you're designing for measures success in revenue and efficiency numbers — not in design approval — it sharpens how you think about every decision. I stopped asking \"does this look right?\" and started asking \"does this actually work?\" That shift is permanent.",
     tools: ["Figma", "Framer", "Notion", "Loom"],
   },
   {
     id: "jompal",
-    name: "Jomppa Handyman Services",
-    tagline: "On-demand handyman booking, redesigned",
-    role: "UX Designer",
+    name: "Jomppa",
+    tagline: "Errand service platform for Nigerians and the Nigerian diaspora",
+    role: "Product Designer (End-to-End)",
     year: "2024",
     client: "Jomppa",
-    industry: "Marketplace / Services",
-    duration: "8 weeks",
-    platform: "Mobile + Web",
+    industry: "Errand Services / Diaspora",
+    duration: "End-to-end",
+    platform: "PWA (Mobile-first)",
     heroImage: jomppaBanner,
     heroImageSources: { 480: jomppaBanner480, 960: jomppaBanner960, 1440: jomppaBanner1440 },
     liveUrl: "https://jomppa.com",
     liveLabel: "jomppa.com",
     description:
-      "A seamless on-demand handyman platform connecting homeowners with trusted local service providers through an intuitive and frictionless booking experience.",
+      "An errand service platform built for Nigerians and the Nigerian diaspora — send gifts, deliver corporate documents, run grocery errands, and handle day-to-day tasks within Nigeria and across borders.",
+    tags: ["PWA", "Errand Services", "Diaspora", "Design Systems", "Mobile"],
+    status: "Active",
     icon: (
       <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-md border border-border bg-card">
         <img src={jomppaLogo} alt="Jomppa logo" className="h-full w-full object-contain" />
@@ -153,13 +171,24 @@ export const projects: ProjectCaseStudy[] = [
     ),
     accentClass: "from-blue-500 to-indigo-600",
     overview:
-      "Jomppa wanted a booking flow that felt as easy as ordering a ride—matched to a vetted local pro in under a minute. The redesign needed to inspire trust at first glance and remove every unnecessary tap from the booking journey.",
+      "Jomppa is an errand service platform built specifically for Nigerians and the Nigerian diaspora. It enables users to send gifts, deliver corporate documents, run grocery errands, and handle day-to-day tasks — both within Nigeria and across borders. The platform bridges the gap between Nigerians abroad who need things done at home and trusted, accountable runners who can execute those tasks reliably.",
     problem:
-      "The legacy flow had 9 screens to book a single service, and trust signals (reviews, verification) were buried below the fold.",
+      "There is a specific kind of frustration that Nigerians living abroad know well — the anxiety of needing something done back home with no reliable way to make it happen. Send a birthday gift to a parent in Lagos. Get a contract signed and delivered to a business partner in Abuja. Pick up groceries for a family member who can't leave the house. The informal alternatives — WhatsApp middlemen, asking favours from friends of friends — worked until they didn't. When they failed, there was no accountability, no recourse, and often no refund. For the diaspora especially, this carried extra emotional weight. Jomppa was built to close this gap.",
     solution:
-      "Collapsed booking into a 3-step flow with smart defaults, surfaced provider trust signals up front, and added a transparent price estimator before commitment.",
+      "Product Designer — end-to-end. Research, information architecture, service categorisation, wireframing, prototyping, design system, high-fidelity UI, and developer handoff through to launch.",
     designThinking:
-      "Booking a handyman is a high-anxiety decision—someone is coming into your home. So the entire visual language had to feel calm, professional, and human. I leaned into a friendly blue palette to communicate trust (the same psychology used in banking and healthcare) and paired it with rounded geometry and real provider photography. Every screen earns its place: if a step couldn't be defaulted or removed, it had to be justified. The result is a flow where the user feels in control without ever feeling lost.",
+      "Trust is the product, not the errand — users don't just want it done, they want to feel confident it will be done correctly, on time, without chasing. Different errands also carry different emotional weight: a corporate document has legal implications, a birthday gift carries sentiment, groceries have perishability concerns. Each needed its own UX treatment. And diaspora users onboard differently — often in a hurry, on a different device, across a time zone — so zero app store friction was non-negotiable.",
+    keyInsights: [
+      "Trust is the product, not the errand. Users don't just want it done — they want to feel confident it will be done correctly, on time, without chasing.",
+      "Different errands carry different emotional weight. A corporate document has legal implications. A birthday gift carries sentiment. Groceries have perishability concerns. Each needed its own UX treatment.",
+      "Diaspora users onboard differently. They're often in a hurry, on a different device, across a time zone. Zero app store friction was non-negotiable.",
+    ],
+    keyDecisions: [
+      { title: "PWA over native app", detail: "A link that works immediately, no download required — designed specifically for diaspora onboarding behaviour." },
+      { title: "Service-specific flows", detail: "Distinct request flows for gift sending, document delivery, and grocery runs, with tailored fields, confirmation language, and timeline expectations." },
+      { title: "Real-time status design", detail: "A persistent status layer (confirmed → runner assigned → en route → delivered) to reduce anxiety and eliminate the urge to contact support." },
+      { title: "Design system built to scale", detail: "A component library from day one, not as an afterthought." },
+    ],
     typography: [
       { family: "Satoshi", usage: "Headlines, hero, marketing", weights: "500, 700, 900" },
       { family: "Inter", usage: "Body, forms, UI", weights: "400, 500, 600" },
@@ -173,20 +202,25 @@ export const projects: ProjectCaseStudy[] = [
       { name: "Success", hex: "#10B981", usage: "Confirmation, ETA badges" },
     ],
     websiteOverview: [
-      "Marketing site (jomppa.com): Service categories grid, transparent pricing, 'How it works' in 3 steps, verified-pro testimonials, and a sticky booking CTA.",
-      "Booking flow: 3-step funnel — pick service → choose time → confirm address. Smart defaults pre-fill returning users.",
-      "Provider profile cards: verification badge, rating breakdown, response time, and price range surfaced above the fold.",
+      "Platform (jomppa.com): installable PWA with service categories for gifting, document delivery, groceries, and custom errands.",
+      "Cross-border request flow: diaspora users place an errand for a recipient in Nigeria, pay in their own currency, and track it live.",
+      "Real-time status layer: confirmed → runner assigned → en route → delivered, visible on every screen.",
+      "Design system: component library and tokens built from day one for fast, consistent developer handoff.",
     ],
     process: [
-      { title: "Field Research", detail: "Shadowed 4 handymen and interviewed 12 homeowners across 3 cities." },
-      { title: "Flow Design", detail: "Reduced 9 steps to 3 with progressive disclosure and saved-address logic." },
-      { title: "Trust Layer", detail: "Designed verification badges, rating breakdowns, and live ETA." },
+      { title: "Research", detail: "Interviewed diaspora users and Nigeria-based recipients to map errand types, failure modes, and trust breakdowns in informal alternatives." },
+      { title: "Service Categorisation", detail: "Defined the information architecture and grouped errands by emotional weight and operational requirements." },
+      { title: "Design System", detail: "Built the component library, tokens, and patterns before high-fidelity UI to keep the platform scalable." },
+      { title: "Handoff & Launch", detail: "Prototyped, documented, and handed off to engineering through to live launch." },
     ],
     outcomes: [
-      "Booking completion up 54%",
-      "Average time-to-book dropped from 4:20 to 1:35",
-      "Provider acceptance rate +22%",
+      "45% improvement in platform load time",
+      "25% reduction in user onboarding time",
+      "40% decrease in developer handoff time (reflecting design system quality)",
+      "40% increase in overall platform engagement",
     ],
+    reflection:
+      "Jomppa taught me that the most important UX problem is often not the one immediately visible. On the surface it's an errand app. Underneath, it's a trust platform for a community that has historically relied on informal systems with no accountability. Designing for the diaspora pushed me to think harder about context — the emotional distance of being abroad, the high stakes of getting something wrong for a loved one, the friction of onboarding under time pressure. Those constraints made the design better.",
     tools: ["Figma", "Maze", "Miro"],
   },
   {
@@ -355,6 +389,188 @@ export const projects: ProjectCaseStudy[] = [
       "NPS climbed from 22 to 51",
     ],
     tools: ["Figma", "Protopie", "Linear"],
+  },
+  {
+    id: "next-level-procurement",
+    name: "Next Level Procurement",
+    tagline: "Procurement and logistics, made visible",
+    role: "Product Designer (Web Experience)",
+    year: "2025",
+    client: "Next Level Procurement",
+    industry: "Procurement / Logistics",
+    duration: "Ongoing",
+    platform: "Web",
+    liveUrl: "https://nextlevelprocurement.com",
+    liveLabel: "nextlevelprocurement.com",
+    description:
+      "A procurement and logistics company website designed to communicate operational credibility, service breadth, and reliability to B2B buyers evaluating vendors.",
+    tags: ["B2B", "Procurement", "Logistics", "Web Design", "Trust Design"],
+    status: "Live",
+    icon: (
+      <Icon className="border border-sky-900/40 bg-sky-950/30 text-[10px] font-semibold text-sky-400">NL</Icon>
+    ),
+    accentClass: "from-sky-500 to-blue-600",
+    overview:
+      "Next Level Procurement handles sourcing, supply, and logistics for organisations that cannot afford delays or unreliable vendors. The web experience had to do one job well: convince a procurement decision-maker, in under a minute, that this company can be trusted with a critical supply chain.",
+    problem:
+      "B2B procurement buyers do not shop — they de-risk. They scan for proof of capability, clarity of scope, and evidence that the vendor understands their operational reality. The existing presentation buried capability behind generic corporate language, forcing buyers to guess whether the company could actually handle their category of work.",
+    solution:
+      "Product Designer for the web experience — positioning, information architecture, service structuring, UI design, and responsive build direction.",
+    designThinking:
+      "For B2B procurement, credibility is the conversion mechanism. I structured the site so capability appears before persuasion: what we source, who we serve, how we operate, and what happens after you enquire. The visual language is deliberately restrained — clean typographic hierarchy, industrial blues, and generous spacing — because over-designed procurement sites read as inexperienced.",
+    keyInsights: [
+      "Procurement buyers de-risk rather than shop — proof of capability must precede persuasion.",
+      "Service scope ambiguity is the single biggest drop-off point in B2B enquiry flows.",
+      "Operational specificity (categories, lead times, coverage) converts better than adjectives.",
+    ],
+    keyDecisions: [
+      { title: "Capability-first architecture", detail: "Service categories and operational scope surface above the fold instead of a generic value proposition." },
+      { title: "Enquiry as a qualified flow", detail: "Structured enquiry fields so requests arrive with category, volume, and timeline already captured." },
+      { title: "Restrained industrial visual system", detail: "Clean hierarchy and a cool industrial palette to signal operational seriousness, not marketing gloss." },
+    ],
+    websiteOverview: [
+      "Hero: direct statement of what the company sources and moves, with a single enquiry CTA.",
+      "Capability grid: procurement categories and logistics services laid out for fast scanning.",
+      "How we operate: sourcing, verification, delivery, and reporting shown as a linear process.",
+      "Enquiry: structured request form capturing category, volume, and timeline up front.",
+    ],
+    process: [
+      { title: "Positioning", detail: "Rewrote the narrative from generic corporate language to specific operational capability." },
+      { title: "Information Architecture", detail: "Restructured services into scannable categories mapped to buyer intent." },
+      { title: "UI Design", detail: "Built a restrained, high-legibility system optimised for fast credibility assessment." },
+      { title: "Responsive Delivery", detail: "Directed the responsive build and handoff through to live launch." },
+    ],
+    outcomes: [
+      "Clear, scannable service structure replacing ambiguous corporate copy",
+      "Higher-quality inbound enquiries through structured request capture",
+      "Consistent brand presentation across desktop and mobile",
+    ],
+    reflection:
+      "Designing for procurement taught me that restraint is a persuasion strategy. The temptation in B2B web design is to add — more sections, more claims, more visuals. The stronger move was subtraction: state the capability plainly, show the process, and get out of the buyer's way.",
+    tools: ["Figma", "Lovable", "Notion"],
+  },
+  {
+    id: "harkardah",
+    name: "Harkardah",
+    tagline: "Brand and digital experience with cultural grounding",
+    role: "Product & Brand Designer",
+    year: "2025",
+    client: "Harkardah",
+    industry: "Brand / Digital Experience",
+    duration: "Ongoing",
+    platform: "Web",
+    liveUrl: "https://harkardah.com",
+    liveLabel: "harkardah.com",
+    description:
+      "A brand and digital experience project where visual identity, editorial storytelling, and interface design were developed together rather than sequentially.",
+    tags: ["Branding", "Editorial", "Web Design", "Identity", "Storytelling"],
+    status: "Live",
+    icon: (
+      <Icon className="border border-rose-900/40 bg-rose-950/30 text-[10px] font-semibold text-rose-400">H</Icon>
+    ),
+    accentClass: "from-rose-500 to-red-600",
+    overview:
+      "Harkardah needed an identity and digital presence that felt culturally grounded rather than borrowed from generic startup aesthetics. The work spanned brand direction, editorial voice, and the web experience that carries both.",
+    problem:
+      "The brand risked landing in the same visual territory as every other new digital-first business: neutral sans-serif, safe palette, stock imagery. That would have made it forgettable and, worse, culturally anonymous. The design challenge was to build a distinctive identity that felt rooted, confident, and modern at the same time — and to make it survive translation into a working interface.",
+    solution:
+      "Product & Brand Designer — brand direction, typographic system, editorial layout, and the web experience built on top of it.",
+    designThinking:
+      "I treated brand and interface as one artefact. The typographic contrast, the palette warmth, and the editorial rhythm were all decided against real layouts rather than in isolated brand boards — so nothing broke when it hit the browser. Storytelling structure drove the page order: identity, then substance, then invitation.",
+    keyInsights: [
+      "Identity built in isolation from layout tends to collapse on contact with real content.",
+      "Cultural grounding comes from typographic and tonal choices, not decorative motifs.",
+      "Editorial pacing — how much a reader absorbs per scroll — is a brand decision, not a layout one.",
+    ],
+    keyDecisions: [
+      { title: "Brand and UI designed together", detail: "Every identity decision was validated against live layouts before being locked." },
+      { title: "High-contrast typographic system", detail: "A distinctive display face paired with a neutral workhorse to carry both personality and legibility." },
+      { title: "Editorial page rhythm", detail: "Long-form sections paced deliberately, using whitespace and scale shifts to control reading tempo." },
+    ],
+    websiteOverview: [
+      "Hero: identity-led statement using the display typeface at full scale.",
+      "Narrative sections: editorial blocks with controlled pacing and generous whitespace.",
+      "Visual system: warm palette and consistent component patterns across all pages.",
+      "Contact: single clear invitation at the end of the narrative arc.",
+    ],
+    typography: [
+      { family: "Display serif", usage: "Hero, section openers, editorial moments", weights: "400, 600" },
+      { family: "Neutral sans", usage: "Body, navigation, UI", weights: "400, 500, 600" },
+    ],
+    process: [
+      { title: "Brand Direction", detail: "Explored typographic and tonal territory until the identity felt rooted rather than borrowed." },
+      { title: "Editorial System", detail: "Defined narrative structure and reading rhythm for long-form sections." },
+      { title: "Interface Design", detail: "Translated the identity into a working component system for the web." },
+      { title: "Build & Launch", detail: "Directed implementation and shipped the live experience." },
+    ],
+    outcomes: [
+      "A distinctive identity that avoids generic startup visual language",
+      "Consistent brand expression across brand assets and the live site",
+      "Editorial structure that holds attention through long-form content",
+    ],
+    reflection:
+      "Harkardah confirmed something I now apply everywhere: brand and product should be designed in the same room. When identity is handed to interface as a finished artefact, one of the two always loses. Building them together meant neither had to compromise.",
+    tools: ["Figma", "Lovable", "Illustrator"],
+  },
+  {
+    id: "hantarp",
+    name: "HanTarp",
+    tagline: "Industrial product clarity for a technical buyer",
+    role: "Product Designer (Web Experience)",
+    year: "2025",
+    client: "HanTarp",
+    industry: "Industrial / Manufacturing",
+    duration: "Ongoing",
+    platform: "Web",
+    liveUrl: "https://hantarp.com",
+    liveLabel: "hantarp.com",
+    description:
+      "A web experience for an industrial products business, designed to make technical specifications, product range, and ordering path immediately legible to trade buyers.",
+    tags: ["Industrial", "B2B", "Product Catalogue", "Web Design", "Technical UX"],
+    status: "Live",
+    icon: (
+      <Icon className="border border-zinc-700/60 bg-zinc-900/40 text-[10px] font-semibold text-zinc-300">HT</Icon>
+    ),
+    accentClass: "from-slate-500 to-zinc-700",
+    overview:
+      "HanTarp sells industrial products to buyers who already know what they need. The site's job is not to inspire — it's to let a technical buyer confirm specification, availability, and how to order without friction or ambiguity.",
+    problem:
+      "Industrial buyers arrive with a specification in mind and abandon quickly when they can't confirm it. Product ranges were presented as marketing copy rather than structured data, forcing buyers to enquire just to answer basic spec questions — slowing sales and loading the team with avoidable back-and-forth.",
+    solution:
+      "Product Designer for the web experience — product information architecture, specification presentation, catalogue UX, and responsive design.",
+    designThinking:
+      "For technical buyers, information density is a feature. I designed the catalogue around specification-first cards, consistent attribute ordering, and predictable comparison patterns, then kept the visual system deliberately utilitarian — neutral greys, strong typographic hierarchy, minimal ornament — so nothing competes with the data.",
+    keyInsights: [
+      "Technical buyers want density, not narrative — spec data must be scannable at a glance.",
+      "Consistent attribute ordering across products is what makes comparison possible.",
+      "Every unanswered spec question becomes a support enquiry or a lost sale.",
+    ],
+    keyDecisions: [
+      { title: "Specification-first catalogue", detail: "Product cards lead with dimensions, materials, and grades instead of marketing copy." },
+      { title: "Consistent attribute schema", detail: "Same attribute order on every product so buyers can compare without re-reading." },
+      { title: "Utilitarian visual system", detail: "Neutral industrial palette and strict hierarchy so data stays the focal point." },
+      { title: "Short path to order", detail: "Enquiry and ordering CTAs attached to every product context, not just a contact page." },
+    ],
+    websiteOverview: [
+      "Hero: plain statement of product categories served, with direct entry into the catalogue.",
+      "Catalogue: specification-first product cards grouped by category and application.",
+      "Product detail: structured attribute tables with consistent ordering across the range.",
+      "Order path: enquiry CTA present in every product context.",
+    ],
+    process: [
+      { title: "Buyer Research", detail: "Mapped how trade buyers evaluate industrial products and where they abandon." },
+      { title: "Information Architecture", detail: "Restructured the range into categories and a consistent attribute schema." },
+      { title: "Catalogue UX", detail: "Designed spec-first cards, detail tables, and comparison-friendly patterns." },
+      { title: "Responsive Build", detail: "Ensured full spec legibility on mobile, where much trade browsing happens." },
+    ],
+    outcomes: [
+      "Specification data legible without contacting sales",
+      "Faster product discovery through structured categorisation",
+      "Reduced avoidable enquiries by answering spec questions on-page",
+    ],
+    reflection:
+      "HanTarp was a useful corrective. Designing for a buyer who wants data — not persuasion — forced me to strip out everything decorative and defend every element by asking whether it helped someone confirm a specification. That discipline transfers to every product I design.",
+    tools: ["Figma", "Lovable", "Notion"],
   },
 ];
 
