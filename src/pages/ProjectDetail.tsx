@@ -65,6 +65,21 @@ export default function ProjectDetail() {
           <h1 className="mt-3 text-xl font-semibold tracking-tight text-foreground">{project.name}</h1>
           <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{project.tagline}</p>
 
+          {(project.tags?.length || project.status) && (
+            <div className="mt-3 flex flex-wrap items-center gap-1.5">
+              {project.status && (
+                <span className="rounded-full border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-foreground">
+                  {project.status}
+                </span>
+              )}
+              {project.tags?.map((t) => (
+                <span key={t} className="rounded-full border border-border bg-card px-2 py-0.5 text-[10px] text-muted-foreground">
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+
           {/* Live links */}
           {(project.liveUrl || project.secondaryUrl) && (
             <div className="mt-4 flex flex-wrap gap-2">
@@ -167,7 +182,7 @@ export default function ProjectDetail() {
             <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.problem}</p>
           </div>
           <div>
-            <h2 className="text-[13px] font-semibold text-foreground">The Solution</h2>
+            <h2 className="text-[13px] font-semibold text-foreground">My Role</h2>
             <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.solution}</p>
           </div>
         </section>
@@ -178,7 +193,38 @@ export default function ProjectDetail() {
           <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.designThinking}</p>
         </section>
 
+        {/* Key Insights */}
+        {project.keyInsights && project.keyInsights.length > 0 && (
+          <section>
+            <h2 className="text-[13px] font-semibold text-foreground">Key Insights</h2>
+            <ul className="mt-3 space-y-2">
+              {project.keyInsights.map((line) => (
+                <li key={line} className="flex items-start gap-2 text-[11px] leading-5 text-muted-foreground">
+                  <span className={`mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Key Decisions */}
+        {project.keyDecisions && project.keyDecisions.length > 0 && (
+          <section>
+            <h2 className="text-[13px] font-semibold text-foreground">Key Design Decisions</h2>
+            <div className="mt-3 space-y-3">
+              {project.keyDecisions.map((d) => (
+                <div key={d.title} className="rounded-xl border border-border bg-card p-3">
+                  <h3 className="text-[12px] font-medium text-foreground">{d.title}</h3>
+                  <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">{d.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Website Overview */}
+        {project.websiteOverview && project.websiteOverview.length > 0 && (
         <section>
           <h2 className="text-[13px] font-semibold text-foreground">Website Overview</h2>
           <ul className="mt-3 space-y-2">
@@ -190,8 +236,10 @@ export default function ProjectDetail() {
             ))}
           </ul>
         </section>
+        )}
 
         {/* Typography */}
+        {project.typography && project.typography.length > 0 && (
         <section>
           <h2 className="text-[13px] font-semibold text-foreground">Typography</h2>
           <div className="mt-3 space-y-2">
@@ -206,8 +254,10 @@ export default function ProjectDetail() {
             ))}
           </div>
         </section>
+        )}
 
         {/* Color Palette */}
+        {project.colorPalette && project.colorPalette.length > 0 && (
         <section>
           <h2 className="text-[13px] font-semibold text-foreground">Color Palette</h2>
           <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -224,6 +274,7 @@ export default function ProjectDetail() {
             ))}
           </div>
         </section>
+        )}
 
         {/* Process */}
         <section>
@@ -265,6 +316,14 @@ export default function ProjectDetail() {
             ))}
           </div>
         </section>
+
+        {/* Reflection */}
+        {project.reflection && (
+          <section className="rounded-2xl border border-border bg-card p-4">
+            <h2 className="text-[13px] font-semibold text-foreground">Reflection</h2>
+            <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.reflection}</p>
+          </section>
+        )}
 
         {/* Visit live (footer CTA) */}
         {project.liveUrl && (
