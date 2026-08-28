@@ -5,10 +5,10 @@ import { projects } from "@/data/projects";
 const spotlights = [
   {
     id: "leaptra",
-    title: "LeapTra AI – Product & Website Experience",
+    title: "LeapTra – Growth Infrastructure Product Design",
     description:
-      "Designed a clean, high-clarity website and product interface for an AI automation brand—built to educate, build trust, and drive conversion with smooth UX and sharp visual hierarchy.",
-    tag: "AI & AUTOMATION",
+      "Designed AI agents, admin dashboards, and client-facing interfaces for a growth infrastructure company that embeds into scaling businesses—measured in efficiency and conversion, not deliverables.",
+    tag: "GROWTH INFRASTRUCTURE",
     date: "Nov. 2025",
     badge: (
       <div className="flex h-5 w-5 items-center justify-center rounded-md bg-gradient-to-br from-[#7b5cff] to-[#4617a9]">
