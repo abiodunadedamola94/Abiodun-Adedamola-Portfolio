@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "sdk_version": "0.28.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "abiodun-adedamola-s-portfolio",
+      "version": "0.1.0",
+      "title": "Abiodun Adedamola's Portfolio"
+    },
+    "tools": [
+      {
+        "name": "get_profile",
+        "title": "Get designer profile",
+        "description": "Get the portfolio owner's public profile: positioning, focus areas, social links, site pages, and the tool stack used day to day.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_projects",
+        "title": "List projects",
+        "description": "List the portfolio's design projects and case studies with their role, year, industry, tags and live URLs. Optionally filter by a free-text query.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Optional text filter matched against name, tagline, industry and tags."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_project",
+        "title": "Get project case study",
+        "description": "Get the full public case-study summary for one portfolio project by its id (use list_projects to discover ids).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Project id, e.g. 'leaptra' or 'hantarp'."
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_experiments",
+        "title": "List playground experiments",
+        "description": "List the interactive playground experiments (title, description, status, stack and highlights) featured on the portfolio.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
