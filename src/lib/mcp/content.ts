@@ -158,9 +158,9 @@ export const mcpProjects: McpProject[] = [
     problem:
       "The old site had no clear donation path, scattered program info, and didn't reflect the energy of the work on the ground.",
     outcomes: [
-      "Donations up 3.4× in the first quarter",
-      "Volunteer signups grew 60%",
-      "Press mentions across 5 outlets",
+      "User engagement up 52% after the redesign",
+      "50+ one-to-one interviews with teachers and parents shaped the roadmap",
+      "WCAG 2.1 AA accessibility across every page",
     ],
     tools: ["Figma", "Webflow", "Photography direction"],
     caseStudyPath: "/projects/ytf",
@@ -199,9 +199,9 @@ export const mcpProjects: McpProject[] = [
     problem:
       "Users abandoned mid-transaction because they couldn't tell what stage the deal was in or what action was required next.",
     outcomes: [
-      "Transaction completion up 41%",
-      "Support tickets down 28%",
-      "NPS climbed from 22 to 51",
+      "Conversion up 18%",
+      "Support tickets down 30%",
+      "One deal timeline both parties can read at a glance",
     ],
     tools: ["Figma", "Protopie", "Linear"],
     caseStudyPath: "/projects/dealmate",
@@ -210,9 +210,9 @@ export const mcpProjects: McpProject[] = [
 
 export const mcpProfile = {
   name: "Abiodun Adedamola",
-  headline: "Product Designer · AI Vibe Coder · Product Strategist",
+  headline: "Product Designer · Design Systems · AI-Native Builder",
   summary:
-    "Product designer who designs and ships with AI tooling: UI/UX and product design, AI vibe coding, product motion design in Figma, editorial design and storytelling, and branding. Currently building growth-facing products and internal tools, and positioning toward product strategy — including a school management system for a family-owned school as a long-term operator play.",
+    "Product designer who designs and ships with AI tooling: UI/UX and product design, AI vibe coding, product motion design in Figma, editorial design and storytelling, and branding. Founder of MoCreative Concept, a product design and AI automation practice that runs on 15 AI agents he designed and shipped; product designer at LeapTra. Open to founding and product design roles, remote from Lagos (UTC+1).",
   focusAreas: [
     "Product & UI/UX design",
     "AI vibe coding (shipping real products with AI tooling)",

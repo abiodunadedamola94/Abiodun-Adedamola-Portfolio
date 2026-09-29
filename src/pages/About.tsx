@@ -45,10 +45,10 @@ export default function About() {
       images: [journeyLead1, journeyLead2],
     },
     {
-      title: "Designer, Strategist, Future School Owner",
+      title: "Founder, MoCreative Concept",
       period: "2025 →",
       description:
-        "Beyond product design, I work across product motion (Figma), editorial storytelling, and branding. I'm also building a School Management System on Lovable for my mom's school — positioning myself as a product strategist who can scale education the same way I scale products. Design, systems, AI, and strategy: one operating system for everything I touch.",
+        "I run my own product design and AI automation practice, MoCreative Concept, on a system of AI agents I designed and shipped: 15 are live, from the 7am brief to invoicing and spend control. I also built a job search agent that scores roles and drafts applications but never applies on its own. Client work includes Next Level Procurement (UK), DealMate and Topkids Montessori School.",
       images: [],
     },
   ];
@@ -59,10 +59,10 @@ export default function About() {
         {/* Header */}
         <section className="reveal">
           <h1 className="text-xl font-semibold tracking-tight text-foreground">
-            Hi 👋 I'm Adedamola — Product Designer, AI Vibe Coder & Strategist.
+            I'm Adedamola, a product designer who ships.
           </h1>
           <p className="mt-2 text-xs text-muted-foreground">
-            Currently designing at LeapTra · Building a School Management System on Lovable
+            Product designer at LeapTra · Founder, MoCreative Concept · Lagos, UTC+1
           </p>
         </section>
 
@@ -158,16 +158,16 @@ export default function About() {
         <section className="reveal">
           <div className="rounded-2xl border border-border bg-gradient-to-br from-card to-secondary p-5">
             <p className="text-[10px] uppercase tracking-[0.2em] text-[hsl(var(--accent-purple))]">
-              The long game
+              What I'm building now
             </p>
             <h2 className="mt-2 text-[15px] font-semibold tracking-tight text-foreground">
-              Designing for products today, scaling education tomorrow.
+              A business that runs on agents I designed.
             </h2>
             <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
-              My mom owns a school, and I'm positioning myself as a product strategist who can help it scale —
-              starting with a School Management System I'm building on Lovable. Same mindset I bring to
-              startups: clear systems, clean UX, and AI where it actually helps. Someday-school-owner energy,
-              shipped one product at a time.
+              MoCreative Concept is my product design and AI automation practice, and it is also my test bed.
+              15 AI agents run it today: they find leads, write proposals, send invoices and track every
+              naira spent, with a human approval step before anything goes out. Designing for my own
+              operations is how I learned what founders actually need from a designer.
             </p>
           </div>
         </section>

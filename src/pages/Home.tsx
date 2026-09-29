@@ -31,29 +31,54 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-xl font-semibold tracking-tight text-foreground animate-fade-in-up">
-            Hey, Adedamola here
+          <p className="text-xs text-muted-foreground animate-fade-in-up">
+            Adedamola · Product designer · Lagos, UTC+1
+          </p>
+          <h1 className="mt-2 text-2xl sm:text-[28px] leading-tight font-semibold tracking-tight text-foreground animate-fade-in-up [animation-delay:80ms] opacity-0 [animation-fill-mode:forwards]">
+            I design products and ship them.
           </h1>
-          <p className="mt-1 text-xs text-muted-foreground animate-fade-in-up [animation-delay:80ms] opacity-0 [animation-fill-mode:forwards]">
-            How's Your Day?
+          <p className="mt-3 max-w-[520px] text-sm leading-6 text-muted-foreground animate-fade-in-up [animation-delay:160ms] opacity-0 [animation-fill-mode:forwards]">
+            4+ years taking products from a blank page to live release, often as the only designer.
+            I set up the design system, work directly with founders, and build what I design with
+            Claude Code, Lovable and Supabase. Founder of MoCreative Concept; product designer at LeapTra.
           </p>
-
-          <p className="mt-4 max-w-[520px] text-xs leading-5 text-muted-foreground animate-fade-in-up [animation-delay:160ms] opacity-0 [animation-fill-mode:forwards]">
-            I'm your go-to Product Designer from the wild intersection of creativity
-            and precision. Once an ops brain, now a full-time digital craftsman, I
-            turn "not sure how this will work" ideas into sleek, intuitive, "Oh wow,
-            that's clean!" experiences. Whether I'm designing ops like a stealth-mode
-            UX ninja or planning web-facing teams, I bring strategy, imagination, and
-            a touch of playful chaos to every project.
-          </p>
-
-          <Link
-            to="/contact"
-            className="mt-5 inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-xs text-foreground transition-all duration-300 hover:bg-secondary hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-8px_hsl(var(--foreground)/0.25)] active:translate-y-0 active:scale-[0.98] press"
-          >
-            Contact
-            <ArrowUpRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-          </Link>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {[
+              ["Sole designer since 2021", "Next Level Procurement, UK"],
+              ["Conversion up 18%", "DealMate escrow flow"],
+              ["Dev handoff time down 40%", "Jomppa design system"],
+              ["15 AI agents live", "MoCreative Concept"],
+            ].map(([fact, where]) => (
+              <li key={fact} className="rounded-xl border border-border bg-card px-3 py-2.5">
+                <span className="block text-[13px] font-medium text-foreground">{fact}</span>
+                <span className="block text-xs text-muted-foreground">{where}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-muted-foreground">Open to founding and product design roles, remote.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] press"
+            >
+              See case studies
+              <ArrowUpRight size={14} />
+            </Link>
+            <a
+              href="/Abiodun_Adedamola_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-all duration-300 hover:bg-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] press"
+            >
+              Résumé (PDF)
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-all duration-300 hover:bg-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] press"
+            >
+              Contact
+            </Link>
+          </div>
         </section>
 
         {/* Featured Work */}
