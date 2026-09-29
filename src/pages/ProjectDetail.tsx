@@ -169,38 +169,68 @@ export default function ProjectDetail() {
           ))}
         </section>
 
+        {/* At a glance: what a reviewer needs in ten seconds */}
+        {project.tldr && project.tldr.length > 0 && (
+          <section className="rounded-2xl border border-border bg-card p-4">
+            <h2 className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">At a glance</h2>
+            <ul className="mt-3 space-y-2">
+              {project.tldr.map((line) => (
+                <li key={line} className="flex items-start gap-2 text-[14px] leading-6 text-foreground">
+                  <span className={`mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Overview */}
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Overview</h2>
-          <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.overview}</p>
+          <h2 className="text-[15px] font-semibold text-foreground">Context</h2>
+          <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{project.overview}</p>
         </section>
 
-        {/* Problem & Solution */}
+        {/* Problem & Role */}
         <section className="grid gap-6 sm:grid-cols-2">
           <div>
-            <h2 className="text-[13px] font-semibold text-foreground">The Problem</h2>
-            <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.problem}</p>
+            <h2 className="text-[15px] font-semibold text-foreground">The problem</h2>
+            <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{project.problem}</p>
           </div>
           <div>
-            <h2 className="text-[13px] font-semibold text-foreground">My Role</h2>
-            <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.solution}</p>
+            <h2 className="text-[15px] font-semibold text-foreground">My role</h2>
+            <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{project.solution}</p>
           </div>
         </section>
+
+        {/* Constraints */}
+        {project.constraints && project.constraints.length > 0 && (
+          <section>
+            <h2 className="text-[15px] font-semibold text-foreground">Constraints</h2>
+            <ul className="mt-3 space-y-2">
+              {project.constraints.map((line) => (
+                <li key={line} className="flex items-start gap-2 text-[13px] leading-6 text-muted-foreground">
+                  <span className={`mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Design Thinking */}
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Design Thinking</h2>
-          <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.designThinking}</p>
+          <h2 className="text-[15px] font-semibold text-foreground">How I approached it</h2>
+          <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{project.designThinking}</p>
         </section>
 
         {/* Key Insights */}
         {project.keyInsights && project.keyInsights.length > 0 && (
           <section>
-            <h2 className="text-[13px] font-semibold text-foreground">Key Insights</h2>
+            <h2 className="text-[15px] font-semibold text-foreground">Key insights</h2>
             <ul className="mt-3 space-y-2">
               {project.keyInsights.map((line) => (
-                <li key={line} className="flex items-start gap-2 text-[11px] leading-5 text-muted-foreground">
-                  <span className={`mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+                <li key={line} className="flex items-start gap-2 text-[13px] leading-6 text-muted-foreground">
+                  <span className={`mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
                   {line}
                 </li>
               ))}
@@ -211,26 +241,58 @@ export default function ProjectDetail() {
         {/* Key Decisions */}
         {project.keyDecisions && project.keyDecisions.length > 0 && (
           <section>
-            <h2 className="text-[13px] font-semibold text-foreground">Key Design Decisions</h2>
+            <h2 className="text-[15px] font-semibold text-foreground">Key decisions and trade-offs</h2>
             <div className="mt-3 space-y-3">
               {project.keyDecisions.map((d) => (
-                <div key={d.title} className="rounded-xl border border-border bg-card p-3">
-                  <h3 className="text-[12px] font-medium text-foreground">{d.title}</h3>
-                  <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">{d.detail}</p>
+                <div key={d.title} className="rounded-xl border border-border bg-card p-3.5">
+                  <h3 className="text-[13px] font-medium text-foreground">{d.title}</h3>
+                  <p className="mt-1.5 text-[13px] leading-6 text-muted-foreground">{d.detail}</p>
                 </div>
               ))}
             </div>
           </section>
         )}
 
+        {/* Process */}
+        <section>
+          <h2 className="text-[15px] font-semibold text-foreground">Process</h2>
+          <div className="mt-3 space-y-3">
+            {project.process.map((step, i) => (
+              <div key={step.title} className="rounded-xl border border-border bg-card p-3.5">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] tabular-nums text-muted-foreground">0{i + 1}</span>
+                  <h3 className="text-[13px] font-medium text-foreground">{step.title}</h3>
+                </div>
+                <p className="mt-1.5 text-[13px] leading-6 text-muted-foreground">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Outcomes */}
+        <section>
+          <h2 className="text-[15px] font-semibold text-foreground">Outcomes</h2>
+          <ul className="mt-3 space-y-2">
+            {project.outcomes.map((o) => (
+              <li key={o} className="flex items-start gap-2 text-[13px] leading-6 text-foreground/90">
+                <span className={`mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+                {o}
+              </li>
+            ))}
+          </ul>
+          {project.evidence && (
+            <p className="mt-3 text-[12px] leading-5 text-muted-foreground">Where these numbers come from: {project.evidence}</p>
+          )}
+        </section>
+
         {/* Website Overview */}
         {project.websiteOverview && project.websiteOverview.length > 0 && (
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Website Overview</h2>
+          <h2 className="text-[15px] font-semibold text-foreground">What shipped</h2>
           <ul className="mt-3 space-y-2">
             {project.websiteOverview.map((line) => (
-              <li key={line} className="flex items-start gap-2 text-[11px] leading-5 text-muted-foreground">
-                <span className={`mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
+              <li key={line} className="flex items-start gap-2 text-[13px] leading-6 text-muted-foreground">
+                <span className={`mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
                 {line}
               </li>
             ))}
@@ -241,15 +303,15 @@ export default function ProjectDetail() {
         {/* Typography */}
         {project.typography && project.typography.length > 0 && (
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Typography</h2>
+          <h2 className="text-[15px] font-semibold text-foreground">Typography</h2>
           <div className="mt-3 space-y-2">
             {project.typography.map((t) => (
               <div key={t.family} className="rounded-xl border border-border bg-card p-3">
                 <div className="flex items-baseline justify-between gap-2">
                   <p className="text-[14px] font-medium text-foreground">{t.family}</p>
-                  <p className="text-[10px] text-muted-foreground/70">{t.weights}</p>
+                  <p className="text-[11px] text-muted-foreground">{t.weights}</p>
                 </div>
-                <p className="mt-1 text-[11px] leading-5 text-muted-foreground">{t.usage}</p>
+                <p className="mt-1 text-[12px] leading-5 text-muted-foreground">{t.usage}</p>
               </div>
             ))}
           </div>
@@ -259,7 +321,7 @@ export default function ProjectDetail() {
         {/* Color Palette */}
         {project.colorPalette && project.colorPalette.length > 0 && (
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Color Palette</h2>
+          <h2 className="text-[15px] font-semibold text-foreground">Colour</h2>
           <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
             {project.colorPalette.map((c) => (
               <div key={c.hex} className="rounded-xl border border-border bg-card p-2.5">
@@ -267,50 +329,21 @@ export default function ProjectDetail() {
                   className="h-12 w-full rounded-md border border-border/50"
                   style={{ backgroundColor: c.hex }}
                 />
-                <p className="mt-2 text-[11px] font-medium text-foreground">{c.name}</p>
-                <p className="text-[10px] uppercase tracking-[0.06em] text-muted-foreground/70">{c.hex}</p>
-                <p className="mt-1 text-[10px] leading-4 text-muted-foreground">{c.usage}</p>
+                <p className="mt-2 text-[12px] font-medium text-foreground">{c.name}</p>
+                <p className="text-[11px] uppercase tracking-[0.06em] text-muted-foreground">{c.hex}</p>
+                <p className="mt-1 text-[11px] leading-4 text-muted-foreground">{c.usage}</p>
               </div>
             ))}
           </div>
         </section>
         )}
 
-        {/* Process */}
-        <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Process</h2>
-          <div className="mt-3 space-y-3">
-            {project.process.map((step, i) => (
-              <div key={step.title} className="rounded-xl border border-border bg-card p-3">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-muted-foreground/70">0{i + 1}</span>
-                  <h3 className="text-[12px] font-medium text-foreground">{step.title}</h3>
-                </div>
-                <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">{step.detail}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Outcomes */}
-        <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Outcomes</h2>
-          <ul className="mt-3 space-y-2">
-            {project.outcomes.map((o) => (
-              <li key={o} className="flex items-start gap-2 text-[11px] leading-5 text-muted-foreground">
-                <span className={`mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-gradient-to-br ${project.accentClass}`} />
-                {o}
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* Tools */}
         <section>
-          <h2 className="text-[13px] font-semibold text-foreground">Tools</h2>
+          <h2 className="text-[15px] font-semibold text-foreground">Tools</h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.tools.map((t) => (
-              <span key={t} className="rounded-full border border-border bg-card px-2.5 py-1 text-[10px] text-muted-foreground">
+              <span key={t} className="rounded-full border border-border bg-card px-2.5 py-1 text-[11px] text-muted-foreground">
                 {t}
               </span>
             ))}
@@ -320,8 +353,14 @@ export default function ProjectDetail() {
         {/* Reflection */}
         {project.reflection && (
           <section className="rounded-2xl border border-border bg-card p-4">
-            <h2 className="text-[13px] font-semibold text-foreground">Reflection</h2>
-            <p className="mt-2 text-[11px] leading-5 text-muted-foreground">{project.reflection}</p>
+            <h2 className="text-[15px] font-semibold text-foreground">Reflection</h2>
+            <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{project.reflection}</p>
+            {project.whatsNext && (
+              <p className="mt-3 text-[13px] leading-6 text-muted-foreground">
+                <span className="font-medium text-foreground">What I'd do next: </span>
+                {project.whatsNext}
+              </p>
+            )}
           </section>
         )}
 

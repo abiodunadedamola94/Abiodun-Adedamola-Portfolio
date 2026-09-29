@@ -1,7 +1,8 @@
-import { useState, useRef, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { approvedTestimonials } from "@/data/testimonials";
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Name is required").max(100),
@@ -9,43 +10,6 @@ const contactSchema = z.object({
   message: z.string().trim().min(1, "Message is required").max(5000),
 });
 
-const testimonials = [
-  {
-    id: 1,
-    text: "Ifeanyi says the design thinking helped shape a platform that's intuitive, modern, and user-friendly. The focus on product growth made a real impact.",
-    name: "Ifeanyi",
-    initials: "IF",
-    accent: "bg-blue-900",
-  },
-  {
-    id: 2,
-    text: "From early concepts to refined user flows, every decision felt thoughtful, clear, and grounded in what users needed.",
-    name: "Henry",
-    initials: "HE",
-    accent: "bg-purple-900",
-  },
-  {
-    id: 3,
-    text: "He's a thoughtful designer and a great teammate. He communicates clearly, helps others, and delivers work with strong visual judgment.",
-    name: "Edith",
-    initials: "ED",
-    accent: "bg-slate-800",
-  },
-  {
-    id: 4,
-    text: "Working with him was seamless. He understands both design and business, and brings clarity to complex problems.",
-    name: "Tunde",
-    initials: "TU",
-    accent: "bg-emerald-900",
-  },
-  {
-    id: 5,
-    text: "His attention to detail and consistency across the product was impressive. A true asset to any design team.",
-    name: "Amaka",
-    initials: "AM",
-    accent: "bg-rose-900",
-  },
-];
 
 export default function Contact() {
   const [fullName, setFullName] = useState("");
@@ -53,7 +17,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,32 +57,46 @@ export default function Contact() {
     <div className="min-h-screen px-5 py-10 sm:px-6 sm:py-12">
       <div className="max-w-[560px] mx-auto space-y-10">
 
-        {/* Scrollable Reviews */}
-        <section>
-          <h2 className="mb-4 text-[15px] font-semibold tracking-tight text-foreground">
-            What People Say
-          </h2>
-          <div
-            ref={scrollRef}
-            className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border"
-            style={{ scrollbarWidth: "thin" }}
-          >
-            {testimonials.map((t) => (
-              <article
-                key={t.id}
-                className="flex-shrink-0 w-[260px] snap-start flex flex-col justify-between rounded-2xl border border-border bg-card p-4 min-h-[165px]"
-              >
-                <p className="text-[11px] leading-5 text-muted-foreground">{t.text}</p>
-                <div className="mt-4 flex items-center gap-2.5">
-                  <div className={`flex h-6 w-6 items-center justify-center rounded-full ${t.accent}`}>
-                    <span className="text-[9px] font-semibold text-foreground">{t.initials}</span>
-                  </div>
-                  <span className="text-[11px] text-muted-foreground">{t.name}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        {/* Testimonials: only people who approved their wording are shown (src/data/testimonials.ts) */}
+        {approvedTestimonials.length > 0 && (
+          <section aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title" className="mb-4 text-[15px] font-semibold tracking-tight text-foreground">
+              What people I've worked with say
+            </h2>
+            <div className="testimonial-marquee relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+              <div className="testimonial-track flex w-max gap-3 py-1">
+                {[...approvedTestimonials, ...approvedTestimonials].map((t, i) => (
+                  <figure
+                    key={`${t.name}-${i}`}
+                    aria-hidden={i >= approvedTestimonials.length}
+                    className="flex w-[300px] flex-shrink-0 flex-col justify-between rounded-2xl border border-border bg-card p-5"
+                  >
+                    <blockquote className="text-[13px] leading-6 text-foreground/90">"{t.quote}"</blockquote>
+                    <figcaption className="mt-5 flex items-center gap-3">
+                      <span
+                        className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white"
+                        style={{ backgroundColor: t.accent }}
+                      >
+                        {t.name.split(" ").map((p) => p[0]).join("").slice(0, 2)}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-[13px] font-medium text-foreground">
+                          {t.linkedin ? (
+                            <a href={t.linkedin} target="_blank" rel="noopener" className="hover:underline">{t.name}</a>
+                          ) : (
+                            t.name
+                          )}
+                        </span>
+                        <span className="block text-xs text-muted-foreground">{t.role}, {t.company}</span>
+                        <span className="block text-xs text-muted-foreground/80">{t.relationship}</span>
+                      </span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Contact Form Card */}
         <section>

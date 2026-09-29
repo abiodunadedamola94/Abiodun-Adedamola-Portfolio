@@ -167,3 +167,12 @@
     transform: translateY(0);
   }
 }
+
+/* Testimonial carousel: slow continuous drift, pauses on hover/focus, static for reduced motion */
+@keyframes testimonial-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.testimonial-track { animation: testimonial-marquee 60s linear infinite; }
+.testimonial-marquee:hover .testimonial-track, .testimonial-marquee:focus-within .testimonial-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track { animation: none; }
+  .testimonial-marquee { overflow-x: auto; }
+}
