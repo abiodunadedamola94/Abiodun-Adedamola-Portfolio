@@ -245,7 +245,7 @@ export const projects: ProjectCaseStudy[] = [
         <img src={jomppaLogo} alt="Jomppa logo" className="h-full w-full object-contain" />
       </div>
     ),
-    accentClass: "from-blue-500 to-indigo-600",
+    accentClass: "from-[#2458E8] to-[#0B1530]",
     tldr: [
       "Led end-to-end design of a two-sided marketplace, now live in Lagos, Abuja and Port Harcourt.",
       "Built the design system across 50+ screens: developer handoff time down 40%.",
@@ -288,6 +288,15 @@ export const projects: ProjectCaseStudy[] = [
       "Overall platform engagement up 40%",
       "Live in Lagos, Abuja and Port Harcourt",
     ],
+    colorPalette: [
+      { name: "Jomppa Blue", hex: "#2458E8", usage: "Primary actions, brand" },
+      { name: "Deep Navy", hex: "#0B1530", usage: "Headlines, dark surfaces" },
+      { name: "Sunshine", hex: "#FFC629", usage: "Offers, highlights" },
+      { name: "Signal Orange", hex: "#FF8A1F", usage: "Status accents" },
+      { name: "Mist", hex: "#EAF0FB", usage: "Secondary surfaces" },
+      { name: "Slate", hex: "#687287", usage: "Body copy" },
+    ],
+    typography: [{ family: "Plus Jakarta Sans", usage: "Headlines, UI and body", weights: "500, 600, 700, 800" }],
     reflection:
       "Jomppa taught me that in a trust-starved market, the interface's main job is reassurance. Every animation, label and status exists to lower anxiety, not to impress.",
     whatsNext:
@@ -377,9 +386,9 @@ export const projects: ProjectCaseStudy[] = [
     featured: true,
     headlineMetric: "Sole designer since 2021",
     icon: (
-      <Icon className="border border-sky-900/40 bg-sky-950/30 text-[10px] font-semibold text-sky-400">NL</Icon>
+      <Icon className="border border-[#2CBAAC]/40 bg-[#2CBAAC]/15 text-[10px] font-semibold text-[#75D7CD]">NL</Icon>
     ),
-    accentClass: "from-sky-500 to-blue-600",
+    accentClass: "from-[#2CBAAC] to-[#121317]",
     tldr: [
       "Sole designer since 2021; led the rebrand from Shopall Superstore & Logistics.",
       "Designed and built the website myself with Lovable, Claude Code and Vercel.",
@@ -414,6 +423,17 @@ export const projects: ProjectCaseStudy[] = [
       "Social engagement up 60% across channels in the Shopall era",
       "A clear service structure for sourcing, logistics and end-to-end packages",
     ],
+    colorPalette: [
+      { name: "Procurement Teal", hex: "#2CBAAC", usage: "Primary actions, brand" },
+      { name: "Light Teal", hex: "#75D7CD", usage: "Highlights on dark" },
+      { name: "Ink", hex: "#121317", usage: "Background, headlines" },
+      { name: "Graphite", hex: "#24262E", usage: "Cards, panels" },
+      { name: "Mist", hex: "#E7EBEF", usage: "Body on dark" },
+    ],
+    typography: [
+      { family: "Geist", usage: "Headlines and body", weights: "400, 500, 600" },
+      { family: "Geist Mono", usage: "Labels, data", weights: "400, 500" },
+    ],
     reflection:
       "Staying with one client for years showed me how design grows with a business: first posters, then a brand, then the product it runs on.",
     whatsNext:
@@ -423,8 +443,8 @@ export const projects: ProjectCaseStudy[] = [
   {
     id: "leaptra",
     name: "LeapTra",
-    tagline: "Product and brand design for a growth infrastructure company",
-    role: "Product designer",
+    tagline: "Rebrand, repositioning and product design for a growth infrastructure company",
+    role: "Product and brand designer",
     year: "2025 – now",
     client: "LeapTra",
     industry: "Growth infrastructure / B2B services",
@@ -437,7 +457,7 @@ export const projects: ProjectCaseStudy[] = [
     liveUrl: "https://leaptra.com",
     liveLabel: "leaptra.com",
     description:
-      "LeapTra builds and operates the growth layer for scaling companies: product, distribution, brand and embedded senior talent, run against one set of numbers. I design across its site, its internal AI agents and its products.",
+      "LeapTra builds and operates the growth layer for scaling companies: product, distribution, brand and embedded senior talent, run against one set of numbers. I led its rebrand and repositioning, and I design across its site, internal AI agents and products.",
     tags: ["B2B", "AI agents", "Dashboards", "Brand"],
     status: "Active",
     featured: true,
@@ -449,16 +469,16 @@ export const projects: ProjectCaseStudy[] = [
     ),
     accentClass: "from-[#60A5FA] to-[#1D4ED8]",
     tldr: [
-      "Product designer across LeapTra's site, internal AI agents and products (including Jomppa).",
+      "Led LeapTra's rebrand and repositioning: from AI-agent products to growth infrastructure.",
       "Lead-qualifier agent: response time down 52%, lead conversion up 28%.",
-      "Dashboards and monitoring: reporting efficiency up 35%.",
+      "Product designer across its internal AI agents and products, including Jomppa.",
     ],
     overview:
       "LeapTra started with AI agents for business automation and has grown into growth infrastructure: four pillars (Product & Platform, Distribution & Demand, Brand & Experience, Embedded Talent) run as one system, plus a platform for payroll, contracts and compliance for distributed teams.",
     problem:
       "Scaling companies outgrow freelancers, but agencies hand back fragmented work with no one accountable for results. LeapTra had to explain a coordinated, outcome-owned model, and its own tools had to run that model efficiently.",
     solution:
-      "Product design across the company: AI agents for sales, marketing, onboarding, operations and support; admin dashboards and monitoring; and work on LeapTra's products and web presence.",
+      "Brand and product design across the company: the rebrand and new positioning, the website structure, AI agents for sales, marketing, onboarding, operations and support, admin dashboards and monitoring, and the talent platform now in progress.",
     constraints: [
       "A company repositioning while it operates: from AI-agent products to growth infrastructure.",
       "Senior B2B buyers who want proof and structure, not AI hype.",
@@ -469,9 +489,13 @@ export const projects: ProjectCaseStudy[] = [
     keyDecisions: [
       { title: "Workflow-first agents", detail: "Each agent fits how the team already works, so adoption doesn't depend on training." },
       { title: "Dense, actionable dashboards", detail: "Built for decisions, not passive monitoring." },
+      { title: "Reposition before redesign", detail: "We restructured what LeapTra sells (four pillars run as one system) before touching the visuals, so the brand describes the business rather than decorating it." },
+      { title: "A calmer, more senior brand", detail: "Moved from violet AI gradients to navy and signal blue, which reads as infrastructure for B2B buyers rather than another AI tool." },
       { title: "Proof over promises", detail: "The new site leads with operating numbers and anonymised engagements rather than AI claims." },
     ],
     process: [
+      { title: "Reposition", detail: "Restructured the offer into Product & Platform, Distribution & Demand, Brand & Experience and Embedded Talent." },
+      { title: "Rebrand", detail: "New identity, colour system and site structure: Diagnose, Design, Deploy, Operate." },
       { title: "Map workflows", detail: "Sales, marketing, onboarding, operations and support, step by step." },
       { title: "Design agents and tools", detail: "Lead qualification, email organisation, CRM routing, monitoring dashboards." },
       { title: "Ship with engineering", detail: "Worked with engineers and consultants so every design was buildable on schedule." },
@@ -493,8 +517,8 @@ export const projects: ProjectCaseStudy[] = [
     reflection:
       "LeapTra changed how I measure my work. When the company is judged on efficiency and revenue, not design approval, the question stops being \"does it look right?\" and becomes \"does it work?\"",
     whatsNext:
-      "Design the operating platform (payroll, contracts, compliance, performance) that productises what LeapTra already runs.",
-    tools: ["Figma", "Claude Code", "Notion", "Loom"],
+      "Ship LeapTra's talent platform: placing senior talent with other businesses, then running payroll, contracts, compliance and performance for those distributed teams in one system.",
+    tools: ["Figma", "Claude Code", "Notion", "Loom", "Illustrator"],
   },
   {
     id: "harkardah",
@@ -513,16 +537,16 @@ export const projects: ProjectCaseStudy[] = [
     tags: ["EdTech", "Brand", "Product", "Co-founder"],
     status: "Building",
     icon: (
-      <Icon className="border border-rose-900/40 bg-rose-950/30 text-[10px] font-semibold text-rose-400">H</Icon>
+      <Icon className="border border-[#0000FE]/40 bg-[#0000FE]/15 text-[10px] font-semibold text-[#8FA0FF]">H</Icon>
     ),
-    accentClass: "from-rose-500 to-red-600",
+    accentClass: "from-[#0000FE] to-[#12172B]",
     tldr: [
       "Co-founder; I lead product and brand design.",
       "Harkardah Schools: one system for school administration, academics and parents.",
       "Brand and interface designed together from day one.",
     ],
     overview:
-      "Schools in Nigeria often run on paper registers, spreadsheets and group chats. Harkardah builds the technology layer that ties those jobs together, starting with Harkardah Schools.",
+      "Harkardah builds digital solutions that help learners learn, teachers teach and schools operate better. It treats education as an ecosystem (learners, teachers, schools and institutions) and starts with Harkardah Schools, an operating system for school administration, academics, communication and records.",
     problem:
       "School administrators juggle attendance, fees, results and parent messages across disconnected tools, and parents see little of it until something goes wrong.",
     solution:
@@ -545,6 +569,17 @@ export const projects: ProjectCaseStudy[] = [
     outcomes: [
       "A live brand and website at harkardah.com.ng",
       "A product direction for Harkardah Schools across five school workflows",
+    ],
+    colorPalette: [
+      { name: "Harkardah Blue", hex: "#0000FE", usage: "Primary actions, brand" },
+      { name: "Midnight", hex: "#12172B", usage: "Headlines, product surfaces" },
+      { name: "Chalk", hex: "#F7F4EC", usage: "Page background" },
+      { name: "Periwinkle", hex: "#8FA0FF", usage: "Labels on dark" },
+      { name: "Chalk Gold", hex: "#E3A73E", usage: "Status accents" },
+    ],
+    typography: [
+      { family: "Space Grotesk", usage: "Display headlines", weights: "500, 600, 700" },
+      { family: "Inter", usage: "Body and UI", weights: "400, 500, 600" },
     ],
     reflection:
       "Co-founding changes the design question from \"what should this look like?\" to \"what should we build first?\"",
@@ -612,7 +647,7 @@ export const projects: ProjectCaseStudy[] = [
     id: "hantarp",
     name: "Hantarp IT Services",
     tagline: "Trust-first website for a managed IT provider",
-    role: "Product designer (through LeapTra)",
+    role: "Designer and front-end build (LeapTra client)",
     year: "2025",
     client: "Hantarp",
     industry: "Managed IT and cloud services",
@@ -621,24 +656,24 @@ export const projects: ProjectCaseStudy[] = [
     liveUrl: "https://www.hantarp.com",
     liveLabel: "hantarp.com",
     description:
-      "A website for a managed IT, cybersecurity and cloud provider, built so business buyers can check capability, response times and compliance in one scroll.",
+      "A LeapTra client project: I designed the website for a managed IT, cybersecurity and cloud provider, then shipped it myself by converting the designs to Next.js with an AI-native workflow.",
     tags: ["B2B", "Web design", "Trust signals"],
     status: "Live",
     icon: (
-      <Icon className="border border-zinc-700/60 bg-zinc-900/40 text-[10px] font-semibold text-zinc-300">HT</Icon>
+      <Icon className="border border-[#00B472]/40 bg-[#00B472]/15 text-[10px] font-semibold text-[#00C980]">HT</Icon>
     ),
-    accentClass: "from-slate-500 to-zinc-700",
+    accentClass: "from-[#00C980] to-[#111827]",
     tldr: [
-      "Website for a managed IT and cybersecurity provider.",
+      "Designed and shipped the site for a managed IT provider, a LeapTra client.",
       "Response-time promises and compliance proof above the fold.",
-      "A three-step process and one consultation call to action.",
+      "Design to production in Next.js by one person, with no handoff gap.",
     ],
     overview:
       "Hantarp monitors, secures and manages IT for businesses around the clock. Buyers choosing an IT partner are buying reliability they can't see until something breaks.",
     problem:
       "IT providers all sound alike. A buyer needs to judge, quickly, whether this team will answer fast, keep data safe and meet compliance rules.",
     solution:
-      "Website design: information architecture, trust signals, service structure and the consultation flow.",
+      "Design and build: information architecture, trust signals, service structure, the consultation flow, and the Next.js front end.",
     designThinking:
       "I put the buyer's three fears in order: will you respond, will my data be safe, will we pass an audit? The page answers them in that order, with specifics rather than adjectives.",
     keyDecisions: [
@@ -649,13 +684,22 @@ export const projects: ProjectCaseStudy[] = [
     process: [
       { title: "Buyer questions", detail: "Listed what an IT decision-maker checks before a first call." },
       { title: "Structure", detail: "Proof, services, process, then one consultation call to action." },
-      { title: "Design and handoff", detail: "Delivered the layout and visual system for build." },
+      { title: "Design to Next.js", detail: "Converted the designs into a Next.js build with an AI-native workflow and shipped it, so nothing was lost between design and code." },
     ],
     outcomes: [
       "A live site that states response times, partners and compliance in one scroll",
       "One clear route to a consultation",
     ],
-    tools: ["Figma"],
+    colorPalette: [
+      { name: "Hantarp Green", hex: "#00B472", usage: "Primary actions, brand" },
+      { name: "Signal Green", hex: "#00C980", usage: "Highlights, status" },
+      { name: "Ink", hex: "#111827", usage: "Headlines, dark sections" },
+    ],
+    typography: [
+      { family: "Syne", usage: "Display headlines", weights: "600, 700" },
+      { family: "DM Sans", usage: "Body and UI", weights: "400, 500" },
+    ],
+    tools: ["Figma", "Next.js", "Claude Code"],
   },
 ];
 
