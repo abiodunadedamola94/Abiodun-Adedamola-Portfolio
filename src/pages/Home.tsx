@@ -87,13 +87,13 @@ export default function Home() {
             Work
           </h2>
 
-          <div className="rounded-[26px] bg-gradient-to-br from-[#6b4bff] via-[#1f67ff] to-[#23d8b9] p-[1px] shadow-[0_18px_60px_rgba(60,40,160,0.22)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(60,40,160,0.3)]">
+          <div className="rounded-[26px] bg-gradient-to-br from-[#85BAFF] via-[#1D4ED8] to-[#0E1E35] p-[1px] shadow-[0_18px_60px_rgba(14,30,53,0.35)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(14,30,53,0.45)]">
             <div className="overflow-hidden rounded-[25px] border border-border/20 bg-card">
               <Link to="/projects/leaptra" className="block group">
                 <div className="relative aspect-[1.55/1] overflow-hidden bg-[linear-gradient(135deg,hsl(var(--muted))_0%,hsl(var(--secondary))_100%)]">
                   <img
                     src={workLeaptra}
-                    alt="LeapTra AI work section"
+                    alt="LeapTra website: growth infrastructure for scaling companies"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     loading="lazy"
                     decoding="async"
@@ -103,17 +103,17 @@ export default function Home() {
 
               <div className="flex items-center justify-between border-t border-border px-4 py-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#7b5cff] to-[#4617a9]">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#0E1E35]">
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
                       <path d="M2 8.5L5.5 2.8L9 8.5" stroke="white" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="text-xs font-medium text-foreground">LeapTra AI</span>
+                  <span className="text-xs font-medium text-foreground">LeapTra</span>
                   <span className="text-[10px] text-muted-foreground/60">|</span>
-                  <span className="text-[10px] text-muted-foreground">2025 - Present</span>
+                  <span className="text-xs text-muted-foreground">Product designer · Sep 2025 – now</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <span className="rounded-full bg-secondary px-2.5 py-1 text-[10px] text-muted-foreground">+2</span>
+                  <Link to="/projects" className="rounded-full bg-secondary px-2.5 py-1 text-xs text-muted-foreground hover:text-foreground">+8 case studies</Link>
                   <ArrowUpRight size={14} className="text-muted-foreground/60" />
                 </div>
               </div>

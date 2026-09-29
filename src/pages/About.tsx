@@ -41,7 +41,7 @@ export default function About() {
       title: "Designing with AI & Vibe Coding",
       period: "2024 - 2025",
       description:
-        "I now collaborate with multidisciplinary teams to design AI-powered products and ship full web experiences using vibe-coding tools — Lovable, Claude, Antigravity, Google Stitch, Trae AI, and VS Code. From LeapTra AI to learning platforms and a vehicle car-tech product, I bridge design and code so ideas reach users faster.",
+        "I now collaborate with multidisciplinary teams to design AI-powered products and ship full web experiences using vibe-coding tools — Lovable, Claude, Antigravity, Google Stitch, Trae AI, and VS Code. From LeapTra's agents and dashboards to Jomppa's marketplace, I bridge design and code so ideas reach users faster.",
       images: [journeyLead1, journeyLead2],
     },
     {
