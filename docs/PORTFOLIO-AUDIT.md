@@ -1,6 +1,6 @@
 # Portfolio audit and conversion plan
 
-Audited 29 Sep 2026: live site mocreativeportfolio.lovable.app and this repo. The lens is a founder or hiring manager deciding in about 60 seconds whether to talk to you.
+Audited 29 Sep 2026: then-live site mocreativeportfolio.lovable.app (now hosted on Vercel at abiodun-adedamola-portfolio.vercel.app) and this repo. The lens is a founder or hiring manager deciding in about 60 seconds whether to talk to you.
 
 ## What a visitor needs to answer in 60 seconds
 1. What do you do, and at what level? (hero)
@@ -41,7 +41,7 @@ Audited 29 Sep 2026: live site mocreativeportfolio.lovable.app and this repo. Th
 `src/hooks/useVisitorTracking.ts` logs every page view to Supabase (`visits`: path including `?ref=`, referrer, device, language). The `notify-visit` function emails you once per visitor session.
 
 ### Tracked links (live now)
-Give every application, DM and post its own link: `mocreativeportfolio.lovable.app/?ref=matcha`, `?ref=linkedin-post`, `?ref=outreach-batch3`. When that link is opened, the "New visit" email's subject shows the ref. You'll know the moment Matcha's founder clicks.
+Give every application, DM and post its own link: `abiodun-adedamola-portfolio.vercel.app/?ref=matcha`, `?ref=linkedin-post`, `?ref=outreach-batch3`. When that link is opened, the "New visit" email's subject shows the ref. You'll know the moment Matcha's founder clicks.
 
 ### What to add next (P1)
 1. **Events, not just page views.** Log these into Supabase next to `visits`: case study opened, scrolled to Outcomes, résumé downloaded, contact form started, contact form sent, email copied. That tells you *where* people drop.
@@ -56,8 +56,11 @@ Give every application, DM and post its own link: `mocreativeportfolio.lovable.a
   - **Send contact-form leads into the MoCreative pipeline:** the form writes to the leads table, Agent 08 screens it, and you get a same-day email.
 - **Treat your metrics as a funnel:** visitors → case study opened (want over 40%) → résumé or contact (want over 5%). If the first rate is low, fix the hero. If the second is low, fix the case study's ending CTA.
 
+## Hosting (updated 29 Sep 2026)
+The Lovable project was not syncing from this repo, so Publish kept pushing an old copy. The site now deploys from `main` to Vercel (project `abiodun-adedamola-portfolio`, team mocreativeconcept): every push to `main` goes live at https://abiodun-adedamola-portfolio.vercel.app in about a minute. `vercel.json` sends every route to `index.html` so deep links like /projects/jompal work.
+
 ## Your part
-1. Review the branch: github.com/abiodunadedamola94/Abiodun-Adedamola-Portfolio/tree/portfolio-v2
-2. Merge `portfolio-v2` into `main`. Lovable syncs `main`.
-3. In Lovable, press **Publish** so the live site updates.
-4. Confirm or correct the numbers still unverified: the LeapTra figures, DealMate's "workshopped with legal and ops teams", and whether Saglev and Belle Muse were real clients or concept work.
+1. Use https://abiodun-adedamola-portfolio.vercel.app everywhere (résumé, LinkedIn, applications). Add `?ref=<source>` per channel.
+2. Optional: give it a clean address (for example adedamola.mocreativeconcept.com) by adding the domain in Vercel and a CNAME in Cloudflare.
+3. Retire the Lovable URL: either reconnect Lovable to this repo, or unpublish it so nobody lands on the old numbers.
+4. Confirm or correct the numbers still unverified: the LeapTra figures and DealMate's "workshopped with legal and ops teams".
