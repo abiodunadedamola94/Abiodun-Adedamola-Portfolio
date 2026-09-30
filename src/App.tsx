@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { useVisitorTracking } from "@/hooks/useVisitorTracking";
+import { useCanonical } from "@/hooks/useCanonical";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -24,6 +25,7 @@ const queryClient = new QueryClient();
 
 const AppRoutes = () => {
   useVisitorTracking();
+  useCanonical();
   return (
     <MainLayout>
       <Routes>

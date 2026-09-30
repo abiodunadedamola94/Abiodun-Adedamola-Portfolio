@@ -41,7 +41,7 @@ Audited 29 Sep 2026: then-live site mocreativeportfolio.lovable.app (now hosted 
 `src/hooks/useVisitorTracking.ts` logs every page view to Supabase (`visits`: path including `?ref=`, referrer, device, language). The `notify-visit` function emails you once per visitor session.
 
 ### Tracked links (live now)
-Give every application, DM and post its own link: `abiodun-adedamola-portfolio.vercel.app/?ref=matcha`, `?ref=linkedin-post`, `?ref=outreach-batch3`. When that link is opened, the "New visit" email's subject shows the ref. You'll know the moment Matcha's founder clicks.
+Give every application, DM and post its own link: `adedamola.mocreativeconcept.com/?ref=matcha`, `?ref=linkedin-post`, `?ref=outreach-batch3`. When that link is opened, the "New visit" email's subject shows the ref. You'll know the moment Matcha's founder clicks.
 
 ### What to add next (P1)
 1. **Events, not just page views.** Log these into Supabase next to `visits`: case study opened, scrolled to Outcomes, résumé downloaded, contact form started, contact form sent, email copied. That tells you *where* people drop.
@@ -60,7 +60,6 @@ Give every application, DM and post its own link: `abiodun-adedamola-portfolio.v
 The Lovable project was not syncing from this repo, so Publish kept pushing an old copy. The site now deploys from `main` to Vercel (project `abiodun-adedamola-portfolio`, team mocreativeconcept): every push to `main` goes live at https://abiodun-adedamola-portfolio.vercel.app in about a minute. `vercel.json` sends every route to `index.html` so deep links like /projects/jompal work.
 
 ## Your part
-1. Use https://abiodun-adedamola-portfolio.vercel.app everywhere (résumé, LinkedIn, applications). Add `?ref=<source>` per channel.
-2. Optional: give it a clean address (for example adedamola.mocreativeconcept.com) by adding the domain in Vercel and a CNAME in Cloudflare.
-3. Retire the Lovable URL: either reconnect Lovable to this repo, or unpublish it so nobody lands on the old numbers.
-4. Confirm or correct the numbers still unverified: the LeapTra figures and DealMate's "workshopped with legal and ops teams".
+1. Main address: **https://adedamola.mocreativeconcept.com** (live 29 Sep; Cloudflare CNAME to Vercel). Use it everywhere, with `?ref=<source>` per channel.
+2. The Lovable URL and abiodun-adedamola-portfolio.vercel.app serve the same build. Keep both alive (the Matcha application links to the vercel.app one). Every page declares the custom domain as canonical, so search engines index one address.
+3. Confirm or correct the numbers still unverified: the LeapTra figures and DealMate's "workshopped with legal and ops teams".
